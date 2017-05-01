@@ -1,0 +1,321 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Install &mdash; behaviour_box 0 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+        <link rel="index" title="Index"
+              href="genindex.html"/>
+        <link rel="search" title="Search" href="search.html"/>
+    <link rel="top" title="behaviour_box 0 documentation" href="index.html"/>
+        <link rel="next" title="Hardware" href="hardware.html"/>
+        <link rel="prev" title="Overview" href="blurb.html"/> 
+
+  
+  <script src="_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="index.html" class="icon icon-home"> behaviour_box
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="blurb.html">Overview</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Install</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#arduino">Arduino</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#python">Python</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#requirements">Requirements</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="hardware.html">Hardware</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Usage.html">Usage</a></li>
+<li class="toctree-l1"><a class="reference internal" href="details.html">Software Descriptions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="code.html">Code Reference</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">behaviour_box</a>
+        
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+      <li>Install</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/Installation.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="install">
+<h1>Install<a class="headerlink" href="#install" title="Permalink to this headline">¶</a></h1>
+<p>Many of the steps described here require administrator privileges on the
+PC that you are using.</p>
+<div class="section" id="arduino">
+<h2>Arduino<a class="headerlink" href="#arduino" title="Permalink to this headline">¶</a></h2>
+<p>To install the Arduino component you will need to have the Arduino IDE
+which you can get from
+<a class="reference external" href="https://www.arduino.cc/en/Main/Software">here</a>. The instructions for
+how to setup Arduino on Windows can be found
+<a class="reference external" href="https://www.arduino.cc/en/Guide/ArduinoUno">here</a>.</p>
+<p>Once the Arduino IDE is installed open <code class="docutils literal"><span class="pre">behaviourbox\behaviourbox.ino</span></code>
+in the Arduino editor. With an Arduino plugged in to the USB port you
+can now upload the code using the <code class="docutils literal"><span class="pre">compile/run</span></code> button in the editor.
+Note the the port that the Arduino is connected to (It&#8217;ll be labeled
+<code class="docutils literal"><span class="pre">COMx</span></code> where <code class="docutils literal"><span class="pre">x</span></code> is an integer).</p>
+</div>
+<div class="section" id="python">
+<h2>Python<a class="headerlink" href="#python" title="Permalink to this headline">¶</a></h2>
+<p>This system was written using python 2.7 on Windows 7. You can download
+python from
+<a class="reference external" href="https://www.python.org/downloads/release/python-2713/">here</a></p>
+<p>Because this is a command line interface it helps to have python
+available from the system path, in addition you should have the python
+package manager (pip) for installing the dependencies. To do all that I
+would recommend following this <a class="reference external" href="https://www.howtogeek.com/197947/how-to-install-python-on-windows/">setup
+guide</a>.</p>
+<p>For those familiar with installing python dependencies on windows the
+packages and versions used here can be found in <code class="docutils literal"><span class="pre">requirements.txt</span></code>.</p>
+<p>Go to Christop Gohlke&#8217;s <a class="reference external" href="http://www.lfd.uci.edu/~gohlke/pythonlibs/">Unofficial Windows Binaries for Python
+Extension Packages</a> page
+and make sure to follow the instructions there for installing
+numpy<a class="reference external" href="#f1">1</a>.</p>
+<ul class="simple">
+<li>Download additional packages from
+<a class="reference external" href="http://www.lfd.uci.edu/~gohlke/pythonlibs/">http://www.lfd.uci.edu/~gohlke/pythonlibs/</a><ul>
+<li><a class="reference external" href="http://www.lfd.uci.edu/~gohlke/pythonlibs/#pandas">Pandas</a></li>
+<li><a class="reference external" href="http://www.lfd.uci.edu/~gohlke/pythonlibs/#sounddevice">sounddevice</a></li>
+<li><strong>These smaller packages are also required and can be downloaded
+from the same site.</strong> Use your browsers search to find them, they
+cannot be linked to<ul>
+<li>Colorama</li>
+<li>Pyserial</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p>In windows open an elevated command window. To do this find cmd.exe in
+the start menu, right click and select run as administrator. Now cd to
+the directory containing the <code class="docutils literal"><span class="pre">.whl</span></code> files that you just downloaded.
+You should then be able to run <code class="docutils literal"><span class="pre">pip</span> <span class="pre">install</span> <span class="pre">*.whl</span></code> to get all the
+packages.</p>
+<div class="section" id="requirements">
+<h3>Requirements<a class="headerlink" href="#requirements" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><a class="reference external" href="https://www.microsoft.com/en-au/software-download/windows7">Windows
+7</a></li>
+<li><a class="reference external" href="http://pandas.pydata.org">Pandas (0.19.0)</a></li>
+<li><a class="reference external" href="http://www.numpy.org/">Numpy (1.11.2+mkl)</a></li>
+<li><a class="reference external" href="https://github.com/pyserial/pyserial">Pyserial (2.7)</a></li>
+<li><a class="reference external" href="https://pypi.python.org/pypi/colorama">Colorama (0.3.7)</a></li>
+<li><a class="reference external" href="http://python-sounddevice.readthedocs.io/en/0.3.5/">sounddevice
+(0.3.5)</a></li>
+<li>An Arduino running <code class="docutils literal"><span class="pre">behaviourbox.ino</span></code> connected to the same
+computer</li>
+</ul>
+<hr class="docutils" />
+<p>1 Follow specific instructions for installing Numpy+mkl. Numpy is a
+python package which is designed for dealing with numerical arrays
+quickly. The mkl version is simply a version of the package that has
+been compiled with the intel math kernel libraries. This makes it a lot
+faster than the basic version. This system doesn&#8217;t necessarily require
+the speed of the mkl version, but it is a nice thing to have <a class="reference external" href="#a1">↩</a></p>
+</div>
+</div>
+</div>
+
+
+           </div>
+           <div class="articleComments">
+            
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="hardware.html" class="btn btn-neutral float-right" title="Hardware" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="blurb.html" class="btn btn-neutral" title="Overview" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2017, Andrew Micallef.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'./',
+            VERSION:'0',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="_static/jquery.js"></script>
+      <script type="text/javascript" src="_static/underscore.js"></script>
+      <script type="text/javascript" src="_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

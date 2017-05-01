@@ -1,0 +1,741 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Software Descriptions &mdash; behaviour_box 0 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+        <link rel="index" title="Index"
+              href="genindex.html"/>
+        <link rel="search" title="Search" href="search.html"/>
+    <link rel="top" title="behaviour_box 0 documentation" href="index.html"/>
+        <link rel="next" title="Code Reference" href="code.html"/>
+        <link rel="prev" title="Usage" href="Usage.html"/> 
+
+  
+  <script src="_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="index.html" class="icon icon-home"> behaviour_box
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="blurb.html">Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Installation.html">Install</a></li>
+<li class="toctree-l1"><a class="reference internal" href="hardware.html">Hardware</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Usage.html">Usage</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Software Descriptions</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#behaviourbox-ino">behaviourbox.ino</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#files">Files</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#global-variables-h">global_variables.h</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#serialcontroller-py">SerialController.py</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#optional-arguments">Optional Arguments:</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#interactive-options">Interactive Options</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#references">References</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="code.html">Code Reference</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">behaviour_box</a>
+        
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+      <li>Software Descriptions</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/details.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="software-descriptions">
+<h1>Software Descriptions<a class="headerlink" href="#software-descriptions" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="behaviourbox-ino">
+<h2>behaviourbox.ino<a class="headerlink" href="#behaviourbox-ino" title="Permalink to this headline">¶</a></h2>
+<p>This program delivers sensory stimulation and opens water valve when the
+animal touches the licking sensor within a certain time window.</p>
+<div class="section" id="files">
+<h3>Files<a class="headerlink" href="#files" title="Permalink to this headline">¶</a></h3>
+<p>The header files in the behaviourbox folder contain the functions
+required to run the behaviourbox code. There are currently 7 header
+files:</p>
+<blockquote>
+<div><ol class="arabic simple">
+<li><code class="docutils literal"><span class="pre">global_variables.h</span></code></li>
+<li><code class="docutils literal"><span class="pre">prototypes.h</span></code></li>
+<li><code class="docutils literal"><span class="pre">timing.h</span></code></li>
+<li><code class="docutils literal"><span class="pre">sensors.h</span></code></li>
+<li><code class="docutils literal"><span class="pre">states.h</span></code></li>
+<li><code class="docutils literal"><span class="pre">SerialComms.h</span></code></li>
+<li><code class="docutils literal"><span class="pre">single_port_setup.h</span></code></li>
+</ol>
+</div></blockquote>
+<div class="section" id="global-variables-h">
+<h4>global_variables.h<a class="headerlink" href="#global-variables-h" title="Permalink to this headline">¶</a></h4>
+<p>contains definitions of all variables that are used by multiple
+functions and expected to have persistent values between the functions.
+These include the initialisation time, the various timing parameters, as
+well as any additional options that I have decided to make available.</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="43%" />
+<col width="57%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">variable</th>
+<th class="head">description</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>t_init</td>
+<td>not settable. This is
+the variable that the
+other times a measured
+relative to</td>
+</tr>
+<tr class="row-odd"><td>t_noLickPer</td>
+<td>A time measured in
+milliseconds. After
+this amount of time
+the program will break
+out of a trial if a
+lick is detected
+before the stimulus.
+If the value is 0 then
+licks before the
+stimulus are ignored
+altogether.</td>
+</tr>
+<tr class="row-even"><td>trial_delay</td>
+<td>Amount of time in
+milliseconds to delay
+the start of a trial</td>
+</tr>
+<tr class="row-odd"><td>t_rewardDEL</td>
+<td>Amount of time in
+milliseconds to delay
+checking for licks
+after a stimulus</td>
+</tr>
+<tr class="row-even"><td>t_rewardDUR</td>
+<td>Amount of time in
+milliseconds to check
+for licks</td>
+</tr>
+<tr class="row-odd"><td>t_trialDUR</td>
+<td>Total time in
+milliseconds that the
+trial should last</td>
+</tr>
+<tr class="row-even"><td>&#160;</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td>t_stimONSET</td>
+<td>The time in
+milliseconds, relative
+to the trial start
+time, that the
+stimulus turns on</td>
+</tr>
+<tr class="row-even"><td>t_stimDUR</td>
+<td>Amount of time in
+milliseconds to keep
+the stimulus on</td>
+</tr>
+<tr class="row-odd"><td>&#160;</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><td>timeout</td>
+<td>Boolean value. If True
+enable the recursive
+timeout punishment</td>
+</tr>
+<tr class="row-odd"><td>&#160;</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><td>debounce</td>
+<td>Number of milliseconds
+to delay between
+reading the lick
+sensor value.</td>
+</tr>
+<tr class="row-odd"><td>lickThres</td>
+<td>The threshold on the
+licksensor required to
+call a lick. This is a
+number between 0 -
+1024 (multiply by 5
+V/1024 to get voltage)</td>
+</tr>
+<tr class="row-even"><td>&#160;</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td>minlickCount</td>
+<td>The number of licks
+required to count as a
+response, ie to open
+the water valve, or to
+deliver a punishment</td>
+</tr>
+<tr class="row-even"><td>lickTrigReward</td>
+<td>Boolean, set true to
+enable the reward to
+be delivered
+immediatly after the
+min licks are reached.
+If false the reward is
+deliverd at the end of
+the response duration</td>
+</tr>
+<tr class="row-odd"><td>reward_nogo</td>
+<td>Boolean, set true if
+you want a correct
+rejection to be
+rewarded at the end on
+the reward period</td>
+</tr>
+<tr class="row-even"><td>&#160;</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td>mode</td>
+<td>{&#8216;-&#8216;, &#8216;O&#8217;, &#8216;H&#8217;} a
+character to represent
+the type of mode to
+run in. If the mode is
+&#8216;H&#8217; the system will
+delver a stimulus and
+a reward in response
+to the animal&#8217;s lick.
+If the mode is &#8216;O&#8217; the
+system delivers a
+stimulus and listens
+for a response</td>
+</tr>
+<tr class="row-even"><td>&#160;</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td>waterVol</td>
+<td>Amount of time in
+milliseconds to hold
+the water valve open
+for</td>
+</tr>
+<tr class="row-even"><td>trialType</td>
+<td>character code {&#8216;G&#8217; or
+&#8216;N&#8217;} to determine if
+this is a go or no go
+trial. This is used to
+determine if the water
+valve will open in
+response to animal&#8217;s
+lick</td>
+</tr>
+<tr class="row-odd"><td>&#160;</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><td>verbose</td>
+<td>Boolean, if True will
+enable full debug
+printing...(might be
+deprecated?)</td>
+</tr>
+<tr class="row-odd"><td>break_wrongChoi
+ce</td>
+<td>Boolean, deprecated</td>
+</tr>
+<tr class="row-even"><td>punish_tone</td>
+<td>deprecated</td>
+</tr>
+<tr class="row-odd"><td>audio</td>
+<td>Boolean, enables
+auditory cues for the
+response period</td>
+</tr>
+<tr class="row-even"><td>&#160;</td>
+<td>&#160;</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+<div class="section" id="serialcontroller-py">
+<h2>SerialController.py<a class="headerlink" href="#serialcontroller-py" title="Permalink to this headline">¶</a></h2>
+<p>This python script is a wrapper for communicating with the Arduino
+program. At it&#8217;s heart is a simple loop that reads data transmitted
+through a serial connection. This is not a necessary component, however
+I wrote it to make running trials a lot easier.</p>
+<ol class="arabic simple">
+<li>The program starts</li>
+<li>The program opens communications with available serial port The
+program waits until it gets the arduino is active, and prints all
+output until the ready signal is transmitted. Which is
+<code class="docutils literal"><span class="pre">-</span> <span class="pre">Status:</span> <span class="pre">Ready</span></code></li>
+<li>The program starts a block</li>
+<li>The program transmits the dict <code class="docutils literal"><span class="pre">params</span></code>, which holds all parameters
+for a single trial. The condition values get updated; based on the
+frequencies being sent, all contents of <code class="docutils literal"><span class="pre">params</span></code> are transmitted to
+the behaviour controller.</li>
+<li>The program prints the frequencies and the condition to the screen
+and a random timeout is started.</li>
+<li>The program initiates a trial by sending a literal <code class="docutils literal"><span class="pre">&quot;GO&quot;</span></code> to the
+behaviour box.<ul>
+<li>The behaviour box runs one trial, with the parameters set
+previously</li>
+</ul>
+</li>
+<li>The program records the output from behaviorCOMs into a dict, which
+later will be converted to a data frame for analysis.</li>
+<li>The program repeats sending mode flags until all stimuli combinations
+have been run through.</li>
+</ol>
+<p>call signature</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">usage</span><span class="p">:</span> <span class="n">SerialControl</span><span class="o">.</span><span class="n">py</span> <span class="p">[</span><span class="o">-</span><span class="n">h</span><span class="p">]</span> <span class="p">[</span><span class="o">-</span><span class="n">af</span><span class="p">]</span> <span class="p">[</span><span class="o">--</span><span class="n">trials</span> <span class="p">[</span><span class="n">TRIALS</span> <span class="p">[</span><span class="n">TRIALS</span> <span class="o">...</span><span class="p">]]]</span>
+                        <span class="p">[</span><span class="o">-</span><span class="n">lt</span> <span class="n">LICKTHRES</span><span class="p">]</span> <span class="p">[</span><span class="o">--</span><span class="n">verbose</span><span class="p">]</span> <span class="p">[</span><span class="o">-</span><span class="n">restore</span><span class="p">]</span>
+                        <span class="p">[</span><span class="o">--</span><span class="n">repeats</span> <span class="n">REPEATS</span><span class="p">]</span> <span class="p">[</span><span class="o">--</span><span class="n">port</span> <span class="n">PORT</span><span class="p">]</span> <span class="p">[</span><span class="o">--</span><span class="n">ITI</span> <span class="n">ITI</span> <span class="n">ITI</span><span class="p">]</span>
+                        <span class="p">[</span><span class="o">-</span><span class="n">rdur</span> <span class="n">T_RDUR</span><span class="p">]</span> <span class="p">[</span><span class="o">-</span><span class="n">ltr</span><span class="p">]</span> <span class="p">[</span><span class="o">--</span><span class="n">t_stimONSET</span> <span class="n">T_STIMONSET</span><span class="p">]</span>
+                        <span class="p">[</span><span class="o">--</span><span class="n">datapath</span> <span class="n">DATAPATH</span><span class="p">]</span> <span class="p">[</span><span class="o">-</span><span class="n">i</span> <span class="n">ID</span><span class="p">]</span> <span class="p">[</span><span class="o">-</span><span class="n">m</span> <span class="n">MODE</span><span class="p">]</span> <span class="p">[</span><span class="o">-</span><span class="n">to</span> <span class="n">TIMEOUT</span><span class="p">]</span>
+                        <span class="p">[</span><span class="o">-</span><span class="n">nlp</span> <span class="n">NOLICK</span><span class="p">]</span> <span class="p">[</span><span class="o">-</span><span class="n">w</span> <span class="n">WEIGHT</span><span class="p">]</span> <span class="p">[</span><span class="o">-</span><span class="n">td</span> <span class="n">TRIALDUR</span><span class="p">]</span>
+                        <span class="p">[</span><span class="o">-</span><span class="n">rdel</span> <span class="n">T_RDELAY</span><span class="p">]</span> <span class="p">[</span><span class="o">-</span><span class="n">p</span><span class="p">]</span> <span class="p">[</span><span class="o">-</span><span class="n">noise</span><span class="p">]</span> <span class="p">[</span><span class="o">-</span><span class="n">rng</span><span class="p">]</span> <span class="p">[</span><span class="o">-</span><span class="n">lc</span> <span class="n">LCOUNT</span><span class="p">]</span>
+</pre></div>
+</div>
+<div class="section" id="optional-arguments">
+<h3>Optional Arguments:<a class="headerlink" href="#optional-arguments" title="Permalink to this headline">¶</a></h3>
+<dl class="data">
+<dt id="help">
+<code class="descname">help</code><a class="headerlink" href="#help" title="Permalink to this definition">¶</a></dt>
+<dd><p><code class="docutils literal"><span class="pre">-h,</span> <span class="pre">--help</span></code></p>
+<p>show this help message and exit</p>
+</dd></dl>
+
+<dl class="data">
+<dt id="audio">
+<code class="descname">audio</code><a class="headerlink" href="#audio" title="Permalink to this definition">¶</a></dt>
+<dd><p><code class="docutils literal"><span class="pre">-af,</span> <span class="pre">--audio</span></code></p>
+<p>provides audio feedback during the trials this is not to be confused
+with the noise played to simulate / mask the scanners</p>
+</dd></dl>
+
+<dl class="data">
+<dt id="trials">
+<code class="descname">trials</code><a class="headerlink" href="#trials" title="Permalink to this definition">¶</a></dt>
+<dd><p><code class="docutils literal"><span class="pre">--trials</span> <span class="pre">[TRIALS</span> <span class="pre">[TRIALS</span> <span class="pre">...]]</span></code></p>
+<p>stimulus durations to run on each trial. That is, the duration of the
+stimulus pulse.</p>
+</dd></dl>
+
+<dl class="data">
+<dt id="lickthres">
+<code class="descname">lickthres</code><a class="headerlink" href="#lickthres" title="Permalink to this definition">¶</a></dt>
+<dd><p><code class="docutils literal"><span class="pre">-lt</span> <span class="pre">LICKTHRES,</span> <span class="pre">--lickThres</span> <span class="pre">LICKTHRES</span></code></p>
+<p>set <code class="docutils literal"><span class="pre">lickThres</span></code> in arduino</p>
+</dd></dl>
+
+<dl class="data">
+<dt id="verbose">
+<code class="descname">verbose</code><a class="headerlink" href="#verbose" title="Permalink to this definition">¶</a></dt>
+<dd><p><code class="docutils literal"><span class="pre">--verbose</span></code></p>
+<p>for debug this will print everything if enabled</p>
+</dd></dl>
+
+<dl class="data">
+<dt id="restore">
+<code class="descname">restore</code><a class="headerlink" href="#restore" title="Permalink to this definition">¶</a></dt>
+<dd><p><code class="docutils literal"><span class="pre">-restore</span></code></p>
+<p>Use to look up previous settings in the comms.ini file</p>
+</dd></dl>
+
+<dl class="data">
+<dt id="repeats">
+<code class="descname">repeats</code><a class="headerlink" href="#repeats" title="Permalink to this definition">¶</a></dt>
+<dd><p><code class="docutils literal"><span class="pre">--repeats</span> <span class="pre">REPEATS</span></code></p>
+<p>the number of times this block should repeat, by default this is 1</p>
+</dd></dl>
+
+<dl class="data">
+<dt id="port">
+<code class="descname">port</code><a class="headerlink" href="#port" title="Permalink to this definition">¶</a></dt>
+<dd><p><code class="docutils literal"><span class="pre">--port</span> <span class="pre">PORT</span></code></p>
+<p>port that the Arduino is connected to</p>
+</dd></dl>
+
+<dl class="data">
+<dt id="ITI">
+<code class="descname">ITI</code><a class="headerlink" href="#ITI" title="Permalink to this definition">¶</a></dt>
+<dd><p><code class="docutils literal"><span class="pre">--ITI</span> <span class="pre">ITI</span> <span class="pre">ITI</span></code></p>
+<p>an interval for randomising between trials</p>
+</dd></dl>
+
+<dl class="data">
+<dt id="t_rDUR">
+<code class="descname">t_rDUR</code><a class="headerlink" href="#t_rDUR" title="Permalink to this definition">¶</a></dt>
+<dd><p><code class="docutils literal"><span class="pre">-rdur</span> <span class="pre">T_RDUR,</span> <span class="pre">--t_rDUR</span> <span class="pre">T_RDUR</span></code></p>
+<p>set end time of reward epoch</p>
+</dd></dl>
+
+<dl class="data">
+<dt id="lickTrigReward">
+<code class="descname">lickTrigReward</code><a class="headerlink" href="#lickTrigReward" title="Permalink to this definition">¶</a></dt>
+<dd><p><code class="docutils literal"><span class="pre">-ltr,</span> <span class="pre">--lickTrigReward</span></code></p>
+<p>flag to allow licks to trigger the reward immediatly</p>
+</dd></dl>
+
+<dl class="data">
+<dt id="t_stimONSET">
+<code class="descname">t_stimONSET</code><a class="headerlink" href="#t_stimONSET" title="Permalink to this definition">¶</a></dt>
+<dd><p><code class="docutils literal"><span class="pre">--t_stimONSET</span> <span class="pre">T_STIMONSET</span></code></p>
+<p>sets the time after trigger to run the first stimulus</p>
+</dd></dl>
+
+<dl class="data">
+<dt id="datapath">
+<code class="descname">datapath</code><a class="headerlink" href="#datapath" title="Permalink to this definition">¶</a></dt>
+<dd><p><code class="docutils literal"><span class="pre">--datapath</span> <span class="pre">DATAPATH</span></code></p>
+<p>path to save data to, by default is the current working directory</p>
+</dd></dl>
+
+<dl class="data">
+<dt id="ID">
+<code class="descname">ID</code><a class="headerlink" href="#ID" title="Permalink to this definition">¶</a></dt>
+<dd><p><code class="docutils literal"><span class="pre">-i</span> <span class="pre">ID,</span> <span class="pre">--ID</span> <span class="pre">ID</span></code></p>
+<p>identifier for this animal/run</p>
+</dd></dl>
+
+<dl class="data">
+<dt id="mode">
+<code class="descname">mode</code><a class="headerlink" href="#mode" title="Permalink to this definition">¶</a></dt>
+<dd><p><code class="docutils literal"><span class="pre">-m</span> <span class="pre">MODE,</span> <span class="pre">--mode</span> <span class="pre">MODE</span></code></p>
+<p>the mode <code class="docutils literal"><span class="pre">h</span></code> abituaton or <code class="docutils literal"><span class="pre">o</span></code> perant, by default will look in the
+config table</p>
+</dd></dl>
+
+<dl class="data">
+<dt id="timeout">
+<code class="descname">timeout</code><a class="headerlink" href="#timeout" title="Permalink to this definition">¶</a></dt>
+<dd><p><code class="docutils literal"><span class="pre">-to</span> <span class="pre">TIMEOUT,</span> <span class="pre">--timeout</span> <span class="pre">TIMEOUT</span></code></p>
+<p>set the timeout duration for incorrect licks</p>
+</dd></dl>
+
+<dl class="data">
+<dt id="noLick">
+<code class="descname">noLick</code><a class="headerlink" href="#noLick" title="Permalink to this definition">¶</a></dt>
+<dd><p><code class="docutils literal"><span class="pre">-nlp</span> <span class="pre">NOLICK,</span> <span class="pre">--noLick</span> <span class="pre">NOLICK</span></code></p>
+<p>set <code class="docutils literal"><span class="pre">t_noLickPer</span></code> in arduino</p>
+</dd></dl>
+
+<dl class="data">
+<dt id="weight">
+<code class="descname">weight</code><a class="headerlink" href="#weight" title="Permalink to this definition">¶</a></dt>
+<dd><p><code class="docutils literal"><span class="pre">-w</span> <span class="pre">WEIGHT,</span> <span class="pre">--weight</span> <span class="pre">WEIGHT</span></code></p>
+<p>weight of the animal in grams</p>
+</dd></dl>
+
+<dl class="data">
+<dt id="trialDur">
+<code class="descname">trialDur</code><a class="headerlink" href="#trialDur" title="Permalink to this definition">¶</a></dt>
+<dd><p><code class="docutils literal"><span class="pre">-td</span> <span class="pre">TRIALDUR,</span> <span class="pre">--trialDur</span> <span class="pre">TRIALDUR</span></code></p>
+<p>set minimum trial duration</p>
+</dd></dl>
+
+<dl class="data">
+<dt id="r_rDELAY">
+<code class="descname">r_rDELAY</code><a class="headerlink" href="#r_rDELAY" title="Permalink to this definition">¶</a></dt>
+<dd><p><code class="docutils literal"><span class="pre">-rdel</span> <span class="pre">T_RDELAY,</span> <span class="pre">--t_rDELAY</span> <span class="pre">T_RDELAY</span></code></p>
+<p>set start time of reward epoch</p>
+</dd></dl>
+
+<dl class="data">
+<dt id="punish">
+<code class="descname">punish</code><a class="headerlink" href="#punish" title="Permalink to this definition">¶</a></dt>
+<dd><p><code class="docutils literal"><span class="pre">-p,</span> <span class="pre">--punish</span></code></p>
+<p>sets <code class="docutils literal"><span class="pre">break_wrongChoice</span></code> to True, incorrect licks will end an operant
+trial early</p>
+</dd></dl>
+
+<dl class="data">
+<dt id="noise">
+<code class="descname">noise</code><a class="headerlink" href="#noise" title="Permalink to this definition">¶</a></dt>
+<dd><p><code class="docutils literal"><span class="pre">-noise</span></code></p>
+<p>plays a noise during trials</p>
+</dd></dl>
+
+<dl class="data">
+<dt id="reward_nogo">
+<code class="descname">reward_nogo</code><a class="headerlink" href="#reward_nogo" title="Permalink to this definition">¶</a></dt>
+<dd><p><code class="docutils literal"><span class="pre">-rng,</span> <span class="pre">--reward_nogo</span></code></p>
+<p>flag to allow a water delivery following no lick of a no go stim</p>
+</dd></dl>
+
+<dl class="data">
+<dt id="lcount">
+<code class="descname">lcount</code><a class="headerlink" href="#lcount" title="Permalink to this definition">¶</a></dt>
+<dd><p><code class="docutils literal"><span class="pre">-lc</span> <span class="pre">LCOUNT,</span> <span class="pre">--lcount</span> <span class="pre">LCOUNT</span></code></p>
+<p>set <code class="docutils literal"><span class="pre">minlickCount</span></code> in arduino</p>
+</dd></dl>
+
+</div>
+<div class="section" id="interactive-options">
+<h3>Interactive Options<a class="headerlink" href="#interactive-options" title="Permalink to this headline">¶</a></h3>
+<table border="1" class="docutils">
+<colgroup>
+<col width="12%" />
+<col width="88%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">key</th>
+<th class="head">option</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>H</td>
+<td>This menu</td>
+</tr>
+<tr class="row-odd"><td>P</td>
+<td>Punish</td>
+</tr>
+<tr class="row-even"><td>S</td>
+<td>toggle single stimulus</td>
+</tr>
+<tr class="row-odd"><td>&lt; &gt;</td>
+<td>lick threshold</td>
+</tr>
+<tr class="row-even"><td>?</td>
+<td>show threshold</td>
+</tr>
+<tr class="row-odd"><td>[ ]</td>
+<td>lickcount</td>
+</tr>
+<tr class="row-even"><td>\</td>
+<td>show lickcount</td>
+</tr>
+<tr class="row-odd"><td>tab</td>
+<td>toggle mode</td>
+</tr>
+<tr class="row-even"><td>: &#8220;</td>
+<td>adjust noLick period</td>
+</tr>
+<tr class="row-odd"><td>L</td>
+<td>show noLick period</td>
+</tr>
+<tr class="row-even"><td>( )</td>
+<td>adjust trial duration</td>
+</tr>
+<tr class="row-odd"><td>T</td>
+<td>show trial duration period</td>
+</tr>
+<tr class="row-even"><td>Y</td>
+<td>toggle timeout (requires punish to take effect)</td>
+</tr>
+<tr class="row-odd"><td>B</td>
+<td>toggle bias correction</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="section" id="references">
+<h2>References<a class="headerlink" href="#references" title="Permalink to this headline">¶</a></h2>
+</div>
+</div>
+
+
+           </div>
+           <div class="articleComments">
+            
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="code.html" class="btn btn-neutral float-right" title="Code Reference" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="Usage.html" class="btn btn-neutral" title="Usage" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2017, Andrew Micallef.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'./',
+            VERSION:'0',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="_static/jquery.js"></script>
+      <script type="text/javascript" src="_static/underscore.js"></script>
+      <script type="text/javascript" src="_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

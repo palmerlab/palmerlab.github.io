@@ -1,0 +1,582 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Code Reference &mdash; behaviour_box 0 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+        <link rel="index" title="Index"
+              href="genindex.html"/>
+        <link rel="search" title="Search" href="search.html"/>
+    <link rel="top" title="behaviour_box 0 documentation" href="index.html"/>
+        <link rel="prev" title="Software Descriptions" href="details.html"/> 
+
+  
+  <script src="_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="index.html" class="icon icon-home"> behaviour_box
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="blurb.html">Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Installation.html">Install</a></li>
+<li class="toctree-l1"><a class="reference internal" href="hardware.html">Hardware</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Usage.html">Usage</a></li>
+<li class="toctree-l1"><a class="reference internal" href="details.html">Software Descriptions</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Code Reference</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#arduino-code">Arduino Code</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#serialcomms">SerialComms</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#sensors">sensors</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#single-port-setup">single_port_setup</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#states">States</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#python-code">Python Code</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#audio">Audio</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#config-loader">config_loader</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#data-directories">data_directories</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#serial-wrapper">serial_wrapper</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#numerical">numerical</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">behaviour_box</a>
+        
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+      <li>Code Reference</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/code.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="code-reference">
+<h1>Code Reference<a class="headerlink" href="#code-reference" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="arduino-code">
+<h2>Arduino Code<a class="headerlink" href="#arduino-code" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="serialcomms">
+<h3>SerialComms<a class="headerlink" href="#serialcomms" title="Permalink to this headline">¶</a></h3>
+<dl class="function">
+<dt id="c.getSerialInput">
+<code class="descname">getSerialInput</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#c.getSerialInput" title="Permalink to this definition">¶</a></dt>
+<dd><p>This function reads the data from the serial
+connection and returns it as a string.</p>
+<p>This is used later to update the values</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="c.getSepIndex">
+<code class="descname">getSepIndex</code><span class="sig-paren">(</span>String<em>&nbsp;input</em>, char<em>&nbsp;separator</em><span class="sig-paren">)</span><a class="headerlink" href="#c.getSepIndex" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the index of the separator character
+in a string.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="c.UpdateGlobals">
+<code class="descname">UpdateGlobals</code><span class="sig-paren">(</span>String<em>&nbsp;input</em><span class="sig-paren">)</span><a class="headerlink" href="#c.UpdateGlobals" title="Permalink to this definition">¶</a></dt>
+<dd><p>This is a big ugly function which compares the
+input string to the names of variables that I have
+stored in memory; This is very much not the <cite>C</cite>
+way to do things...</p>
+<p>I think this could be a hash table. I haven&#8217;t
+learned enough about hash table implementation
+yet and I know this works, so for the moment:
+<em>If it ain&#8217;t broke</em>...</p>
+</dd></dl>
+
+</div>
+<div class="section" id="sensors">
+<h3>sensors<a class="headerlink" href="#sensors" title="Permalink to this headline">¶</a></h3>
+<dl class="function">
+<dt id="c.senseLick">
+<code class="descname">senseLick</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#c.senseLick" title="Permalink to this definition">¶</a></dt>
+<dd><ol class="arabic simple">
+<li><dl class="first docutils">
+<dt>check to see if the lick sensor has moved:</dt>
+<dd>if the sensor was in a low state, allow the calling of a rising edge.</dd>
+</dl>
+</li>
+<li>check if the sensor is above threshold</li>
+<li>report if the state of lickOn has change</li>
+</ol>
+</dd></dl>
+
+</div>
+<div class="section" id="single-port-setup">
+<h3>single_port_setup<a class="headerlink" href="#single-port-setup" title="Permalink to this headline">¶</a></h3>
+<dl class="function">
+<dt id="c.runTrial">
+<code class="descname">runTrial</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#c.runTrial" title="Permalink to this definition">¶</a></dt>
+<dd><p>returns 0 if the stimulus was applied
+returns 1 if a timeout is required
+until next trial</p>
+<p>local variables and initialisation of the trial
+<code class="docutils literal"><span class="pre">t_init</span></code> is initialised such that <code class="docutils literal"><span class="pre">t_since</span></code>
+returns 0 at the start of the trial, and
+increases from there.</p>
+<p>trial_phase0
+while the trial has not started</p>
+<blockquote>
+<div><ol class="arabic simple">
+<li>update the time</li>
+<li>check for licks</li>
+<li>trigger the recording by putting <code class="docutils literal"><span class="pre">recTrig</span> <span class="pre">=</span> <span class="pre">HIGH</span></code></li>
+</ol>
+</div></blockquote>
+</dd></dl>
+
+<dl class="function">
+<dt id="c.Habituation">
+<code class="descname">Habituation</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#c.Habituation" title="Permalink to this definition">¶</a></dt>
+<dd><ol class="arabic simple">
+<li>Determine the appropriate stimulus</li>
+<li>set active port</li>
+<li><dl class="first docutils">
+<dt>counts number of sequential licks</dt>
+<dd><ul class="first last">
+<li>Uses the C ternary operator, which has the form:
+<code class="docutils literal"><span class="pre">A</span> <span class="pre">=</span> <span class="pre">boolean</span> <span class="pre">?</span> <span class="pre">assignment</span> <span class="pre">if</span> <span class="pre">true</span> <span class="pre">:</span> <span class="pre">assignment</span> <span class="pre">if</span> <span class="pre">false;</span></code>
+the active port count gets incremented to a maximum of ten,
+while the non-active port count gets decremented to a minimum
+of zero. This is an important caveat as the counts are
+made with unsigned variables, meaning that one less than zero
+is actually 255!</li>
+</ul>
+</dd>
+</dl>
+</li>
+</ol>
+</dd></dl>
+
+</div>
+<div class="section" id="states">
+<h3>States<a class="headerlink" href="#states" title="Permalink to this headline">¶</a></h3>
+<dl class="function">
+<dt id="c.ActiveDelay">
+<code class="descname">ActiveDelay</code><span class="sig-paren">(</span>unsigned long<em>&nbsp;wait</em>, bool<em>&nbsp;break_on_lick</em><span class="sig-paren">)</span><a class="headerlink" href="#c.ActiveDelay" title="Permalink to this definition">¶</a></dt>
+<dd><p>needs to be documented</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="c.deliver_reward">
+<code class="descname">deliver_reward</code><span class="sig-paren">(</span>bool<em>&nbsp;water</em><span class="sig-paren">)</span><a class="headerlink" href="#c.deliver_reward" title="Permalink to this definition">¶</a></dt>
+<dd><p>Open the water port on <cite>port</cite> for a
+duration defined by waterVol</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="c.punish">
+<code class="descname">punish</code><span class="sig-paren">(</span>int<em>&nbsp;del</em><span class="sig-paren">)</span><a class="headerlink" href="#c.punish" title="Permalink to this definition">¶</a></dt>
+<dd><p>plays the punishment tone / buzzer</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="c.Timeout">
+<code class="descname">Timeout</code><span class="sig-paren">(</span>unsigned long<em>&nbsp;wait</em>, int<em>&nbsp;depth</em><span class="sig-paren">)</span><a class="headerlink" href="#c.Timeout" title="Permalink to this definition">¶</a></dt>
+<dd><p>runs a time out</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="c.preTrial">
+<code class="descname">preTrial</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#c.preTrial" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="docutils">
+<dt>while the trial has not started</dt>
+<dd><ol class="first last arabic simple">
+<li>update the time</li>
+<li>check for licks</li>
+<li>trigger the recording by putting recTrig -&gt; HIGH</li>
+</ol>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="function">
+<dt>
+<code class="descname">count_responses(int duration, bool lickTrig) {</code></dt>
+<dd><p>Counts the number of hits on the lick sensor over <cite>duration</cite>
+of milliseconds.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="c.TrialStimulus">
+<code class="descname">TrialStimulus</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#c.TrialStimulus" title="Permalink to this definition">¶</a></dt>
+<dd><p>runs the trial stimulus</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="c.conditional_tone">
+<code class="descname">conditional_tone</code><span class="sig-paren">(</span>int<em>&nbsp;frequency</em>, int<em>&nbsp;duration</em><span class="sig-paren">)</span><a class="headerlink" href="#c.conditional_tone" title="Permalink to this definition">¶</a></dt>
+<dd><p>wrapper function so I don&#8217;t need to put a billion if statements</p>
+</dd></dl>
+
+</div>
+</div>
+<div class="section" id="python-code">
+<h2>Python Code<a class="headerlink" href="#python-code" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt id="enumerate">
+<code class="descname">enumerate</code><span class="sig-paren">(</span><em>sequence</em><span class="optional">[</span>, <em>start=0</em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#enumerate" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return an iterator that yields tuples of an index and an item of the
+<em>sequence</em>. (And so on.)</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="menu">
+<code class="descname">menu</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#menu" title="Permalink to this definition">¶</a></dt>
+<dd><p>Reads the characters in the buffer and modifies the program
+parameters accordingly</p>
+<p>TODO: On pause show current settings
+TODO: Allow an input mechanism to access all possible values
+TODO: make menu accept a dictionary or something and have it</p>
+<blockquote>
+<div><dl class="docutils">
+<dt>return one as well!</dt>
+<dd><ul class="first last simple">
+<li>Use the keys of the dictionary to allow tab
+completion and scrolling of the inputs as well</li>
+</ul>
+</dd>
+</dl>
+</div></blockquote>
+</dd></dl>
+
+<div class="section" id="audio">
+<h3>Audio<a class="headerlink" href="#audio" title="Permalink to this headline">¶</a></h3>
+<dl class="function">
+<dt id="band_limited_noise">
+<code class="descname">band_limited_noise</code><span class="sig-paren">(</span><em>min_freq</em>, <em>max_freq</em>, <em>samples=1024</em>, <em>samplerate=1</em><span class="sig-paren">)</span><a class="headerlink" href="#band_limited_noise" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<p>Generates noise within a particular band of frequencies</p>
+<dl class="function">
+<dt id="fftnoise">
+<code class="descname">fftnoise</code><span class="sig-paren">(</span><em>f</em><span class="sig-paren">)</span><a class="headerlink" href="#fftnoise" title="Permalink to this definition">¶</a></dt>
+<dd><p>?? filter used in band_limited_noise</p>
+</dd></dl>
+
+</div>
+<div class="section" id="config-loader">
+<h3>config_loader<a class="headerlink" href="#config-loader" title="Permalink to this headline">¶</a></h3>
+<dl class="function">
+<dt id="write_out_config">
+<code class="descname">write_out_config</code><span class="sig-paren">(</span><em>params</em>, <em>ID</em><span class="sig-paren">)</span><a class="headerlink" href="#write_out_config" title="Permalink to this definition">¶</a></dt>
+<dd><p>writes a subset of parameters to an ini file which can then be
+used to recover variable values.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="ConfigSectionMap">
+<code class="descname">ConfigSectionMap</code><span class="sig-paren">(</span><em>section</em>, <em>Config</em><span class="sig-paren">)</span><a class="headerlink" href="#ConfigSectionMap" title="Permalink to this definition">¶</a></dt>
+<dd><p>Helper function for reading configuration objects to a dictionary</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="restore_old_config">
+<code class="descname">restore_old_config</code><span class="sig-paren">(</span><em>ID</em><span class="sig-paren">)</span><a class="headerlink" href="#restore_old_config" title="Permalink to this definition">¶</a></dt>
+<dd><p>reads the old ini file.
+checks to see if the current ID is in the ini sections
+restores the varible values in the global namespace
+(Hacky solution)</p>
+</dd></dl>
+
+</div>
+<div class="section" id="data-directories">
+<h3>data_directories<a class="headerlink" href="#data-directories" title="Permalink to this headline">¶</a></h3>
+<dl class="function">
+<dt id="timenow">
+<code class="descname">timenow</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#timenow" title="Permalink to this definition">¶</a></dt>
+<dd><p>provides the current time string in the form <cite>HH:MM:SS</cite></p>
+</dd></dl>
+
+<dl class="function">
+<dt id="today">
+<code class="descname">today</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#today" title="Permalink to this definition">¶</a></dt>
+<dd><p>provides today&#8217;s date as a string in the form YYMMDD</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="create_datapath">
+<code class="descname">create_datapath</code><span class="sig-paren">(</span><em>DATADIR = &quot;&quot;</em>, <em>date = today()</em><span class="sig-paren">)</span><a class="headerlink" href="#create_datapath" title="Permalink to this definition">¶</a></dt>
+<dd><p>make a path to save the data based on today&#8217;s date</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="create_logfile">
+<code class="descname">create_logfile</code><span class="sig-paren">(</span><em>DATADIR = &quot;&quot;</em>, <em>date = today()</em>, <em>port = None</em>, <em>ID = None</em><span class="sig-paren">)</span><a class="headerlink" href="#create_logfile" title="Permalink to this definition">¶</a></dt>
+<dd><p>make a logfile to save communications, based on today&#8217;s date</p>
+</dd></dl>
+
+</div>
+<div class="section" id="serial-wrapper">
+<h3>serial_wrapper<a class="headerlink" href="#serial-wrapper" title="Permalink to this headline">¶</a></h3>
+<dl class="function">
+<dt>
+<code class="descname">timenow</code><span class="sig-paren">(</span><span class="sig-paren">)</span></dt>
+<dd><p>provides the current time string in the form <cite>HH:MM:SS</cite></p>
+</dd></dl>
+
+<dl class="function">
+<dt id="init_serialport">
+<code class="descname">init_serialport</code><span class="sig-paren">(</span><em>port</em>, <em>logfile = None</em>, <em>ID = None</em><span class="sig-paren">)</span><a class="headerlink" href="#init_serialport" title="Permalink to this definition">¶</a></dt>
+<dd><p>Open communications with the arduino;
+quits the program if no communications are
+found on port.</p>
+<p>If there are communications the script
+waits 500 ms then reads all incoming
+lines from the Serial port. These two
+lines include the arduino code version
+and a string that says the arduino is online</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="Serial_monitor">
+<code class="descname">Serial_monitor</code><span class="sig-paren">(</span><em>ser</em>, <em>logfile</em>, <em>show = True</em>, <em>ID = None</em>, <em>verbose = None</em><span class="sig-paren">)</span><a class="headerlink" href="#Serial_monitor" title="Permalink to this definition">¶</a></dt>
+<dd><p>Reads from the serial port one line at time.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="Continuous_monitor_arduino">
+<code class="descname">Continuous_monitor_arduino</code><span class="sig-paren">(</span><em>ser</em>, <em>end_trial_msg = &quot;- Status Ready&quot;</em>, <em>sep = ':'</em>, <em>debug_flags = ((&quot;#&quot;</em>, <em>&quot;t#&quot;</em>, <em>&quot;- &quot;))</em>, <em>ID = None</em>, <em>verbose = None</em>, <em>logfile = None</em><span class="sig-paren">)</span><a class="headerlink" href="#Continuous_monitor_arduino" title="Permalink to this definition">¶</a></dt>
+<dd><p>continously loops through messages from the serial monitor
+until the end_trial_msg is recieved.
+messages that are not preceded by debug_flags are stored in a
+dictionary which is returned by this function.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="update_bbox">
+<code class="descname">update_bbox</code><span class="sig-paren">(</span><em>ser</em>, <em>params</em>, <em>logfile</em>, <em>trial_df = {}</em>, <em>ID = None</em>, <em>verbose = None</em><span class="sig-paren">)</span><a class="headerlink" href="#update_bbox" title="Permalink to this definition">¶</a></dt>
+<dd><p>Communicates the contents of the dict <cite>params</cite> through
+the serial communications port.</p>
+<p>data is sent in the form: <cite>parmas[key] = value</cite>  &#8211;&gt; <cite>key:value</cite></p>
+<p>trail_df dictionary is updated to include the parameters
+received from the arduino</p>
+</dd></dl>
+
+</div>
+<div class="section" id="numerical">
+<h3>numerical<a class="headerlink" href="#numerical" title="Permalink to this headline">¶</a></h3>
+<dl class="function">
+<dt id="num">
+<code class="descname">num</code><span class="sig-paren">(</span><em>s</em><span class="sig-paren">)</span><a class="headerlink" href="#num" title="Permalink to this definition">¶</a></dt>
+<dd><p>First attempts to convert string s to an integer.
+If that gives a ValueError then it attempts to return s
+as a float. Finally if s cannot be converted to a float or
+an int, the string is returned unchanged.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="na_printr">
+<code class="descname">na_printr</code><span class="sig-paren">(</span><em>s</em><span class="sig-paren">)</span><a class="headerlink" href="#na_printr" title="Permalink to this definition">¶</a></dt>
+<dd><p>prints nans as strings if necessary</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="unpack_table">
+<code class="descname">unpack_table</code><span class="sig-paren">(</span><em>filename</em><span class="sig-paren">)</span><a class="headerlink" href="#unpack_table" title="Permalink to this definition">¶</a></dt>
+<dd><p>Reads a transposed csv,
+Where the first column contains the header</p>
+</dd></dl>
+
+</div>
+</div>
+</div>
+
+
+           </div>
+           <div class="articleComments">
+            
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+      
+        <a href="details.html" class="btn btn-neutral" title="Software Descriptions" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2017, Andrew Micallef.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'./',
+            VERSION:'0',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="_static/jquery.js"></script>
+      <script type="text/javascript" src="_static/underscore.js"></script>
+      <script type="text/javascript" src="_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>
