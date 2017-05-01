@@ -92,10 +92,12 @@
             
               <p class="caption"><span class="caption-text">Contents:</span></p>
 <ul class="current">
-<li class="toctree-l1"><a class="reference internal" href="blurb.html">Overview</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Installation.html">Install</a></li>
 <li class="toctree-l1"><a class="reference internal" href="hardware.html">Hardware</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">Usage</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Usage</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#interactive-options">Interactive Options</a></li>
+</ul>
+</li>
 <li class="toctree-l1"><a class="reference internal" href="details.html">Software Descriptions</a></li>
 <li class="toctree-l1"><a class="reference internal" href="code.html">Code Reference</a></li>
 </ul>
@@ -199,6 +201,27 @@ status messages as they come in.</p>
 <p>At the end of the trial the program collects all the status messages and
 formats them into a Pandas DataFrame, which is then saved into
 <code class="docutils literal"><span class="pre">{ID}_{date}_000.csv</span></code></p>
+<div class="section" id="interactive-options">
+<h2>Interactive Options<a class="headerlink" href="#interactive-options" title="Permalink to this headline">¶</a></h2>
+<p>The Python wrapper was written to allow for limited interaction with the
+Arduino while a trial was being run without the need to touch the source code
+and recompile. With animal experimentation in mind, making a small error in
+code could have a disastrous effect on the training experience.</p>
+<p>The interactive options currently provided allow the following variables to be
+altered online:</p>
+<ul class="simple">
+<li>Punish</li>
+<li>lick threshold</li>
+<li>show threshold</li>
+<li>lick count</li>
+<li>show lick count</li>
+<li>toggle mode</li>
+<li>adjust no lick Period</li>
+<li>show no Lick Period</li>
+<li>adjust trial duration</li>
+<li>toggle time out</li>
+</ul>
+</div>
 </div>
 
 
