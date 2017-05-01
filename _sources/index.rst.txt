@@ -8,6 +8,9 @@ Welcome to behaviour_box's documentation!
 
 ``Version 3.0.20170201.8``
 
+`Source Repository`_. 
+.. _`Source Repository`: <https://github.com/palmerlab/behaviour_box>
+
 This repository contains a set of files to implement a Go-No-Go task
 using an Arduino and Python 2.7. By itself this collects some summary
 information for a behavioural trial, but is not a stand alone
