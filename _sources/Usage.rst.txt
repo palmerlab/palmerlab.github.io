@@ -52,8 +52,10 @@ Interactive Options
 
 The Python wrapper was written to allow for limited interaction with the 
 Arduino while a trial was being run without the need to touch the source code 
-and recompile. With animal experimentation in mind, making a small error in 
-code could have a disastrous effect on the training experience.
+and recompile. With animal experimentation in mind it was decided that it 
+would be best to avoid editing the control code during a run. The Arduino
+exposes a number of relevant variables to the Serial Communications port,
+which the Python wrapper reads and writes to.
  
 The interactive options currently provided allow the following variables to be 
 altered online:

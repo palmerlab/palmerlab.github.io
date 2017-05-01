@@ -16,17 +16,17 @@ Files
 The header files in the behaviourbox folder contain the functions
 required to run the behaviourbox code. There are currently 7 header
 files: 
-    1. ``global_variables.h`` 
-    2. ``prototypes.h``
-    3. ``timing.h``
-    4. ``sensors.h`` 
-    5. ``states.h`` 
-    6. ``SerialComms.h``
 
-    7. ``single_port_setup.h``
+1. ``global_variables.h`` 
+2. ``prototypes.h``
+3. ``timing.h``
+4. ``sensors.h`` 
+5. ``states.h`` 
+6. ``SerialComms.h``
+7. ``single_port_setup.h``
 
 global_variables.h
-~~~~~~~~~~~~~~~~~~~
+------------------
 
 contains definitions of all variables that are used by multiple
 functions and expected to have persistent values between the functions.
@@ -162,9 +162,6 @@ well as any additional options that I have decided to make available.
 |                  | enable full debug      |
 |                  | printing...(might be   |
 |                  | deprecated?)           |
-+------------------+------------------------+
-| break\_wrongChoi | Boolean, deprecated    |
-| ce               |                        |
 +------------------+------------------------+
 | punish\_tone     | deprecated             |
 +------------------+------------------------+
@@ -360,13 +357,6 @@ Optional Arguments:
 
     set start time of reward epoch
 
-.. py:data:: punish
-    
-    ``-p, --punish``
-
-
-    sets ``break_wrongChoice`` to True, incorrect licks will end an operant
-    trial early
 
 .. py:data:: noise
     

@@ -92,16 +92,13 @@
             
               <p class="caption"><span class="caption-text">Contents:</span></p>
 <ul class="current">
-<li class="toctree-l1"><a class="reference internal" href="blurb.html">Overview</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Installation.html">Install</a></li>
 <li class="toctree-l1"><a class="reference internal" href="hardware.html">Hardware</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Usage.html">Usage</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Software Descriptions</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#behaviourbox-ino">behaviourbox.ino</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#files">Files</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#global-variables-h">global_variables.h</a></li>
-</ul>
-</li>
+<li class="toctree-l3"><a class="reference internal" href="#files">Files</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#global-variables-h">global_variables.h</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="#serialcontroller-py">SerialController.py</a><ul>
@@ -187,8 +184,7 @@ animal touches the licking sensor within a certain time window.</p>
 <p>The header files in the behaviourbox folder contain the functions
 required to run the behaviourbox code. There are currently 7 header
 files:</p>
-<blockquote>
-<div><ol class="arabic simple">
+<ol class="arabic simple">
 <li><code class="docutils literal"><span class="pre">global_variables.h</span></code></li>
 <li><code class="docutils literal"><span class="pre">prototypes.h</span></code></li>
 <li><code class="docutils literal"><span class="pre">timing.h</span></code></li>
@@ -197,9 +193,9 @@ files:</p>
 <li><code class="docutils literal"><span class="pre">SerialComms.h</span></code></li>
 <li><code class="docutils literal"><span class="pre">single_port_setup.h</span></code></li>
 </ol>
-</div></blockquote>
+</div>
 <div class="section" id="global-variables-h">
-<h4>global_variables.h<a class="headerlink" href="#global-variables-h" title="Permalink to this headline">¶</a></h4>
+<h3>global_variables.h<a class="headerlink" href="#global-variables-h" title="Permalink to this headline">¶</a></h3>
 <p>contains definitions of all variables that are used by multiple
 functions and expected to have persistent values between the functions.
 These include the initialisation time, the various timing parameters, as
@@ -367,24 +363,19 @@ enable full debug
 printing...(might be
 deprecated?)</td>
 </tr>
-<tr class="row-odd"><td>break_wrongChoi
-ce</td>
-<td>Boolean, deprecated</td>
-</tr>
-<tr class="row-even"><td>punish_tone</td>
+<tr class="row-odd"><td>punish_tone</td>
 <td>deprecated</td>
 </tr>
-<tr class="row-odd"><td>audio</td>
+<tr class="row-even"><td>audio</td>
 <td>Boolean, enables
 auditory cues for the
 response period</td>
 </tr>
-<tr class="row-even"><td>&#160;</td>
+<tr class="row-odd"><td>&#160;</td>
 <td>&#160;</td>
 </tr>
 </tbody>
 </table>
-</div>
 </div>
 </div>
 <div class="section" id="serialcontroller-py">
@@ -570,14 +561,6 @@ config table</p>
 <code class="descname">r_rDELAY</code><a class="headerlink" href="#r_rDELAY" title="Permalink to this definition">¶</a></dt>
 <dd><p><code class="docutils literal"><span class="pre">-rdel</span> <span class="pre">T_RDELAY,</span> <span class="pre">--t_rDELAY</span> <span class="pre">T_RDELAY</span></code></p>
 <p>set start time of reward epoch</p>
-</dd></dl>
-
-<dl class="data">
-<dt id="punish">
-<code class="descname">punish</code><a class="headerlink" href="#punish" title="Permalink to this definition">¶</a></dt>
-<dd><p><code class="docutils literal"><span class="pre">-p,</span> <span class="pre">--punish</span></code></p>
-<p>sets <code class="docutils literal"><span class="pre">break_wrongChoice</span></code> to True, incorrect licks will end an operant
-trial early</p>
 </dd></dl>
 
 <dl class="data">
