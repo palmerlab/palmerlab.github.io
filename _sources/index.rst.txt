@@ -3,7 +3,7 @@
    You can adapt this file completely to your liking, but it should at least
    contain the root `toctree` directive.
 
-Welcome to behaviour_box's documentation!
+Documentation for palmerlab\behaviour_box
 =========================================
 
 ``Version 3.0.20170201.8``
