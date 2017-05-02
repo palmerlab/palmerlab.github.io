@@ -179,19 +179,67 @@
 <h2>behaviourbox.ino<a class="headerlink" href="#behaviourbox-ino" title="Permalink to this headline">¶</a></h2>
 <p>This program delivers sensory stimulation and opens water valve when the
 animal touches the licking sensor within a certain time window.</p>
-<div class="section" id="files">
+<p>The basic flow of the program is shown below</p>
+<img alt="program flow diagram" src="_images/Flow_diagram.svg" /><div class="section" id="files">
 <h3>Files<a class="headerlink" href="#files" title="Permalink to this headline">¶</a></h3>
 <p>The header files in the behaviourbox folder contain the functions
 required to run the behaviourbox code. There are currently 7 header
 files:</p>
-<ol class="arabic simple">
-<li><code class="docutils literal"><span class="pre">global_variables.h</span></code></li>
-<li><code class="docutils literal"><span class="pre">prototypes.h</span></code></li>
-<li><code class="docutils literal"><span class="pre">timing.h</span></code></li>
-<li><code class="docutils literal"><span class="pre">sensors.h</span></code></li>
-<li><code class="docutils literal"><span class="pre">states.h</span></code></li>
-<li><code class="docutils literal"><span class="pre">SerialComms.h</span></code></li>
-<li><code class="docutils literal"><span class="pre">single_port_setup.h</span></code></li>
+<ol class="arabic">
+<li><dl class="first docutils">
+<dt><code class="docutils literal"><span class="pre">global_variables.h</span></code></dt>
+<dd><p class="first last">Lists the variables that are used with global scope.
+These variables, unless explicitly stated to be internal,
+can be updated via the serial communications function.</p>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt><code class="docutils literal"><span class="pre">prototypes.h</span></code></dt>
+<dd><p class="first last">This file just lists the function names that will be defined
+in other files. It is organised such that the prototypes
+are grouped by the file that they come from, under the appropriate
+heading</p>
+</dd>
+</dl>
+</li>
+<li><p class="first"><code class="docutils literal"><span class="pre">timing.h</span></code></p>
+<blockquote>
+<div><p>Contains the function used to keep all events on time. The Arduino
+code continuously asks the microcontroller how long it has been
+running and uses a simple logic of <em>if the current time is &gt; the
+time an event was supposed to happen : do event</em></p>
+</div></blockquote>
+</li>
+<li><p class="first"><code class="docutils literal"><span class="pre">sensors.h</span></code></p>
+<blockquote>
+<div><p>Contains the thresholding function for converting the analog lick
+sensor values to binary lick events. This function detects rising
+edges, applies a simple digital smooth, and will play a short feed
+back tone if the <code class="docutils literal"><span class="pre">audio</span></code> flag is set to <code class="docutils literal"><span class="pre">True</span></code>.</p>
+</div></blockquote>
+</li>
+<li><p class="first"><code class="docutils literal"><span class="pre">states.h</span></code></p>
+<blockquote>
+<div><p>This file contains the functions that define the states of the
+Arduino. All of the nodes in the flow diagram are defined here.</p>
+</div></blockquote>
+</li>
+<li><p class="first"><code class="docutils literal"><span class="pre">SerialComms.h</span></code></p>
+<blockquote>
+<div><p>This contains a nasty series of if statements and string compares.
+The <code class="docutils literal"><span class="pre">UpdateGlobals</span></code> function is the backbone of this implementations
+interactivity. I have hard coded all of the variable names and
+their string representations into a long series of conditional
+statements. The basic logic is:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Given</span><span class="p">:</span> <span class="s2">&quot;VariableName:Value&quot;</span>
+<span class="n">Update</span><span class="p">:</span> <span class="n">VariableName</span> <span class="o">=</span> <span class="n">Value</span>
+</pre></div>
+</div>
+</div></blockquote>
+</li>
+<li><p class="first"><code class="docutils literal"><span class="pre">single_port_setup.h</span></code></p>
+</li>
 </ol>
 </div>
 <div class="section" id="global-variables-h">
@@ -370,9 +418,6 @@ deprecated?)</td>
 <td>Boolean, enables
 auditory cues for the
 response period</td>
-</tr>
-<tr class="row-odd"><td>&#160;</td>
-<td>&#160;</td>
 </tr>
 </tbody>
 </table>
