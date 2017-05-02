@@ -6,7 +6,6 @@ PC that you are using.
 
 The code referred to here can be found at the following
 source repository: `<https://github.com/palmerlab/behaviour_box>`_.
-
 The easiest way to get this code is to follow the link and select
 the **Clone or download** button. The recommended way is to install
 git-svn, (`a Windows installer can be found 
