@@ -265,6 +265,10 @@ call signature
 Optional Arguments:
 -------------------
 
+These are the arguments which can be supplied to  ``SerialControl.py`` to modify
+it's parameters. Each paramater has default values which can be set by modifying
+the appropriate value in ``utilities/args.py``, see :ref:`adjust-defaults`.
+
 .. py:data:: help
     
     ``-h, --help``
