@@ -178,9 +178,12 @@ time stamped communications sent and received by the program, and a csv
 file which contains the same data in tabulated form. The name pattern
 for the csv is <code class="docutils literal"><span class="pre">{ID}_{date}_000.csv</span></code> where ID is given with the
 <code class="docutils literal"><span class="pre">-ID</span></code> argument and date is in the format YYMMDD.</p>
-<p><em>It is important to note that the data files will be appended to each
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">It is important to note that the data files will be appended to each
 time the program is run over the course of the day, unless a new ID is
-specified.</em></p>
+specified.</p>
+</div>
 <p>Next the program checks the serial port specified by the <code class="docutils literal"><span class="pre">--port</span></code>
 argument. By default, if no port is specified the program will search
 the available ports for any Arduino that is plugged in. If more than

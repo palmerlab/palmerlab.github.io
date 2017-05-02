@@ -16,9 +16,10 @@ file which contains the same data in tabulated form. The name pattern
 for the csv is ``{ID}_{date}_000.csv`` where ID is given with the
 ``-ID`` argument and date is in the format YYMMDD.
 
-*It is important to note that the data files will be appended to each
-time the program is run over the course of the day, unless a new ID is
-specified.*
+.. note::
+    It is important to note that the data files will be appended to each
+    time the program is run over the course of the day, unless a new ID is
+    specified.
 
 Next the program checks the serial port specified by the ``--port``
 argument. By default, if no port is specified the program will search
