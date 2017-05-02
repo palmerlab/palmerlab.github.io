@@ -372,9 +372,9 @@ completion and scrolling of the inputs as well</li>
 <dl class="function">
 <dt id="band_limited_noise">
 <code class="descname">band_limited_noise</code><span class="sig-paren">(</span><em>min_freq</em>, <em>max_freq</em>, <em>samples=1024</em>, <em>samplerate=1</em><span class="sig-paren">)</span><a class="headerlink" href="#band_limited_noise" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
+<dd><p>Generates noise within a particular band of frequencies</p>
+</dd></dl>
 
-<p>Generates noise within a particular band of frequencies</p>
 <dl class="function">
 <dt id="fftnoise">
 <code class="descname">fftnoise</code><span class="sig-paren">(</span><em>f</em><span class="sig-paren">)</span><a class="headerlink" href="#fftnoise" title="Permalink to this definition">¶</a></dt>
@@ -483,6 +483,9 @@ received from the arduino</p>
 </div>
 <div class="section" id="numerical">
 <h3>numerical<a class="headerlink" href="#numerical" title="Permalink to this headline">¶</a></h3>
+<p>Previously held functions to help with numerical
+handling, these have mostly been replaced, now contains a
+function for general conversion of strings to numbers</p>
 <dl class="function">
 <dt id="num">
 <code class="descname">num</code><span class="sig-paren">(</span><em>s</em><span class="sig-paren">)</span><a class="headerlink" href="#num" title="Permalink to this definition">¶</a></dt>
@@ -490,19 +493,6 @@ received from the arduino</p>
 If that gives a ValueError then it attempts to return s
 as a float. Finally if s cannot be converted to a float or
 an int, the string is returned unchanged.</p>
-</dd></dl>
-
-<dl class="function">
-<dt id="na_printr">
-<code class="descname">na_printr</code><span class="sig-paren">(</span><em>s</em><span class="sig-paren">)</span><a class="headerlink" href="#na_printr" title="Permalink to this definition">¶</a></dt>
-<dd><p>prints nans as strings if necessary</p>
-</dd></dl>
-
-<dl class="function">
-<dt id="unpack_table">
-<code class="descname">unpack_table</code><span class="sig-paren">(</span><em>filename</em><span class="sig-paren">)</span><a class="headerlink" href="#unpack_table" title="Permalink to this definition">¶</a></dt>
-<dd><p>Reads a transposed csv,
-Where the first column contains the header</p>
 </dd></dl>
 
 </div>
