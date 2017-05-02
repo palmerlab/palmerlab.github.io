@@ -30,7 +30,7 @@ On Windows the serial ports are specified by ``COMx`` where
 ``x`` is some integer. If no communications are found the program 
 will exit. 
 
-..note ::
+.. note ::
     If you always have the Arduino detected on the same port
     you can adjust the default value of the ``port`` variable to avoid setting
     this flag each run, see :ref:`adjust-defaults`. This strategy applies to

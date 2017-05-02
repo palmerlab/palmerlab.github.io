@@ -192,13 +192,13 @@ of Arduino ports. It will then select the first arduino.
 On Windows the serial ports are specified by <code class="docutils literal"><span class="pre">COMx</span></code> where
 <code class="docutils literal"><span class="pre">x</span></code> is some integer. If no communications are found the program
 will exit.</p>
-<dl class="docutils">
-<dt>..note ::</dt>
-<dd>If you always have the Arduino detected on the same port
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">If you always have the Arduino detected on the same port
 you can adjust the default value of the <code class="docutils literal"><span class="pre">port</span></code> variable to avoid setting
 this flag each run, see <a class="reference internal" href="#adjust-defaults"><span class="std std-ref">Adjusting Default Arguments</span></a>. This strategy applies to
-all the variables that might remain invariant between sessions.</dd>
-</dl>
+all the variables that might remain invariant between sessions.</p>
+</div>
 <p>When the connection has been established the program first transmits a
 number of configuration variables to the arduino, such as the lick
 threshold, and timing information. These can be updated online later,
