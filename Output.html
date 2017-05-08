@@ -408,111 +408,86 @@ with these parameters:</p>
 relevant to analysis.</p>
 <table border="1" class="docutils">
 <colgroup>
-<col width="17%" />
-<col width="17%" />
-<col width="17%" />
-<col width="17%" />
-<col width="17%" />
-<col width="17%" />
+<col width="9%" />
+<col width="91%" />
 </colgroup>
-<tbody valign="top">
-<tr class="row-odd"><td>Variable</td>
-<td>value</td>
-<td>&#160;</td>
-<td>Variable</td>
-<td>value</td>
-<td>&#160;</td>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Variable</th>
+<th class="head">value</th>
 </tr>
+</thead>
+<tbody valign="top">
 <tr class="row-even"><td>ID</td>
 <td>The identity string for this animal</td>
-<td>&#160;</td>
-<td>rew_count</td>
-<td>&#160;</td>
-<td>&#160;</td>
 </tr>
 <tr class="row-odd"><td>Water</td>
-<td>Either 0 for no water delivered</td>
-<td>or 1 to indicate water was given</td>
-<td>&#160;</td>
-<td>reward_nogo</td>
-<td>&#160;</td>
+<td>Either 0 for no water delivered, or 1 to indicate water was given</td>
 </tr>
 <tr class="row-even"><td>audio</td>
-<td>&#160;</td>
-<td>&#160;</td>
-<td>t_noLickPer</td>
-<td>&#160;</td>
-<td>&#160;</td>
+<td>Either 0 to indicate audio cues not used on this trial, or 1 to indicate the use of audio cues</td>
 </tr>
 <tr class="row-odd"><td>block</td>
-<td>&#160;</td>
-<td>&#160;</td>
-<td>t_rewardDEL</td>
-<td>&#160;</td>
-<td>&#160;</td>
+<td>An integer value that keeps track of which group of trials this trial is part of (increments by 1 after all of the iterable values are exhausted and the session gets repeated)</td>
 </tr>
 <tr class="row-even"><td>comment</td>
-<td>&#160;</td>
-<td>&#160;</td>
-<td>t_rewardDUR</td>
-<td>&#160;</td>
-<td>&#160;</td>
+<td>Space for trial relevant comments</td>
 </tr>
 <tr class="row-odd"><td>lickThres</td>
-<td>&#160;</td>
-<td>&#160;</td>
-<td>t_stimDUR</td>
-<td>&#160;</td>
-<td>&#160;</td>
+<td>The internal value the Arduino uses as the lick threshold. Multiply by 5 / 1024 to get the threshold in volts</td>
 </tr>
 <tr class="row-even"><td>lickTrigReward</td>
-<td>&#160;</td>
-<td>&#160;</td>
-<td>t_stimONSET</td>
-<td>&#160;</td>
-<td>&#160;</td>
+<td>Either&nbsp;0 indicating if the reward is delivered at the end of the response period, or 1 to indicate that the animal is rewarded immediately after licking.</td>
 </tr>
 <tr class="row-odd"><td>minlickCount</td>
-<td>&#160;</td>
-<td>&#160;</td>
-<td>t_trialDUR</td>
-<td>&#160;</td>
-<td>&#160;</td>
+<td>The number of licks required on this trial in order to count as a response to the Arduino.</td>
 </tr>
 <tr class="row-even"><td>mode</td>
-<td>&#160;</td>
-<td>&#160;</td>
-<td>time</td>
-<td>&#160;</td>
-<td>&#160;</td>
+<td>Either ‘o’ for an operant trial or ‘h’ for a habituation trial</td>
 </tr>
 <tr class="row-odd"><td>post_count</td>
-<td>&#160;</td>
-<td>&#160;</td>
-<td>timeout</td>
-<td>&#160;</td>
-<td>&#160;</td>
+<td>The number of licks counted after the stimulus</td>
 </tr>
 <tr class="row-even"><td>pre_count</td>
-<td>&#160;</td>
-<td>&#160;</td>
-<td>trialType</td>
-<td>&#160;</td>
-<td>&#160;</td>
+<td>The number of licks counted in the period before the stimulus</td>
 </tr>
 <tr class="row-odd"><td>punish_tone</td>
-<td>&#160;</td>
-<td>&#160;</td>
-<td>trial_noise</td>
-<td>&#160;</td>
-<td>&#160;</td>
+<td>0 or 1 indicating if a tone is used to punish a false alarm</td>
 </tr>
 <tr class="row-even"><td>response</td>
-<td>&#160;</td>
-<td>&#160;</td>
-<td>trial_num</td>
-<td>&#160;</td>
-<td>&#160;</td>
+<td>The character code of the animals response. One of {‘H’: hit, ‘f’: false alarm, ‘R’: correct rejection, ‘e’: early lick (trial broken), ‘-’: miss}.</td>
+</tr>
+<tr class="row-odd"><td>rew_count</td>
+<td>Number of licks detected in the response period</td>
+</tr>
+<tr class="row-even"><td>t_noLickPer</td>
+<td>This is the number of milliseconds before the stimulus in which licks would cause the trial to be cut short.</td>
+</tr>
+<tr class="row-odd"><td>t_rewardDEL</td>
+<td>The amount of time delayed between the end of the stimulus and the onset of the response period.</td>
+</tr>
+<tr class="row-even"><td>t_rewardDUR</td>
+<td>The width of the response period in milliseconds.</td>
+</tr>
+<tr class="row-odd"><td>t_stimDUR</td>
+<td>The duration in milliseconds that the stimulus was on for on this trial</td>
+</tr>
+<tr class="row-even"><td>t_stimONSET</td>
+<td>The time the stimulus came on, relative to the beginning of the trial, in milliseconds.</td>
+</tr>
+<tr class="row-odd"><td>t_trialDUR</td>
+<td>The duration of this trial in milliseconds.</td>
+</tr>
+<tr class="row-even"><td>time</td>
+<td>Time on the PC that this trial began (in 24 hour format)</td>
+</tr>
+<tr class="row-odd"><td>timeout</td>
+<td>The number of seconds specified for the timeout period</td>
+</tr>
+<tr class="row-even"><td>trialType</td>
+<td>The type of trial. Either ‘G’ for a go trial, or ‘N’ for a no-go trial</td>
+</tr>
+<tr class="row-odd"><td>trial_noise</td>
+<td>A Boolean value indicating if the masking noise was played on this trial.</td>
 </tr>
 </tbody>
 </table>
@@ -603,156 +578,6 @@ bounds.</dd>
 </dl>
 </li>
 </ul>
-<div class="literal-block-wrapper docutils container" id="id1">
-<div class="code-block-caption"><span class="caption-text">output.log</span><a class="headerlink" href="#id1" title="Permalink to this code">¶</a></div>
-<div class="highlight-yaml"><div class="highlight"><pre><span></span>    <span class="c1">#Arduino online,18:29:40</span>
-    <span class="c1">#BB_V3.0.20170201.8,18:29:40</span>
-<span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">Status</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">Ready,18:29:40</span>
-    <span class="l l-Scalar l-Scalar-Plain">##t_stimONSET:2000,18:29:40</span>
-    <span class="l l-Scalar l-Scalar-Plain">t_stimONSET:2000,18:29:40</span>
-    <span class="l l-Scalar l-Scalar-Plain">##minlickCount:2,18:29:40</span>
-    <span class="l l-Scalar l-Scalar-Plain">minlickCount:2,18:29:40</span>
-    <span class="l l-Scalar l-Scalar-Plain">##mode:o,18:29:40</span>
-    <span class="l l-Scalar l-Scalar-Plain">mode:o,18:29:40</span>
-    <span class="l l-Scalar l-Scalar-Plain">##lickThres:204,18:29:41</span>
-    <span class="l l-Scalar l-Scalar-Plain">lickThres:204,18:29:41</span>
-    <span class="l l-Scalar l-Scalar-Plain">##break_wrongChoice:1,18:29:41</span>
-    <span class="l l-Scalar l-Scalar-Plain">break_wrongChoice:1,18:29:41</span>
-    <span class="l l-Scalar l-Scalar-Plain">##reward_nogo:0,18:29:41</span>
-    <span class="l l-Scalar l-Scalar-Plain">reward_nogo:0,18:29:41</span>
-    <span class="l l-Scalar l-Scalar-Plain">##lickTrigReward:0,18:29:41</span>
-    <span class="l l-Scalar l-Scalar-Plain">lickTrigReward:0,18:29:41</span>
-    <span class="l l-Scalar l-Scalar-Plain">##minlickCount:2,18:29:41</span>
-    <span class="l l-Scalar l-Scalar-Plain">minlickCount:2,18:29:41</span>
-    <span class="l l-Scalar l-Scalar-Plain">##t_noLickPer:1000,18:29:41</span>
-    <span class="l l-Scalar l-Scalar-Plain">t_noLickPer:1000,18:29:41</span>
-    <span class="l l-Scalar l-Scalar-Plain">##lickThres:204,18:29:41</span>
-    <span class="l l-Scalar l-Scalar-Plain">lickThres:204,18:29:41</span>
-    <span class="l l-Scalar l-Scalar-Plain">##t_stimONSET:2000,18:29:41</span>
-    <span class="l l-Scalar l-Scalar-Plain">t_stimONSET:2000,18:29:41</span>
-    <span class="l l-Scalar l-Scalar-Plain">##t_rewardDEL:50,18:29:42</span>
-    <span class="l l-Scalar l-Scalar-Plain">t_rewardDEL:50,18:29:42</span>
-    <span class="l l-Scalar l-Scalar-Plain">##t_rewardDUR:800,18:29:42</span>
-    <span class="l l-Scalar l-Scalar-Plain">t_rewardDUR:800,18:29:42</span>
-    <span class="l l-Scalar l-Scalar-Plain">##punish_tone:0,18:29:42</span>
-    <span class="l l-Scalar l-Scalar-Plain">punish_tone:0,18:29:42</span>
-    <span class="l l-Scalar l-Scalar-Plain">##t_trialDUR:5000.0,18:29:42</span>
-    <span class="l l-Scalar l-Scalar-Plain">t_trialDUR:5000,18:29:42</span>
-    <span class="l l-Scalar l-Scalar-Plain">##mode:o,18:29:42</span>
-    <span class="l l-Scalar l-Scalar-Plain">mode:o,18:29:42</span>
-    <span class="l l-Scalar l-Scalar-Plain">##timeout:2.5,18:29:42</span>
-    <span class="l l-Scalar l-Scalar-Plain">timeout:2,18:29:42</span>
-    <span class="l l-Scalar l-Scalar-Plain">##audio:1,18:29:42</span>
-    <span class="l l-Scalar l-Scalar-Plain">audio:1,18:29:42</span>
-    <span class="l l-Scalar l-Scalar-Plain">##t_stimDUR:25,18:29:43</span>
-    <span class="l l-Scalar l-Scalar-Plain">t_stimDUR:25,18:29:43</span>
-    <span class="l l-Scalar l-Scalar-Plain">##trialType:G,18:29:43</span>
-    <span class="l l-Scalar l-Scalar-Plain">trialType:G,18:29:43</span>
-    <span class="l l-Scalar l-Scalar-Plain">##t_stimDUR:25,18:29:43</span>
-    <span class="l l-Scalar l-Scalar-Plain">t_stimDUR:25,18:29:43</span>
-    <span class="l l-Scalar l-Scalar-Plain">##trialType:G,18:29:43</span>
-    <span class="l l-Scalar l-Scalar-Plain">trialType:G,18:29:43</span>
-    <span class="l l-Scalar l-Scalar-Plain">#Enter `preTrial`</span><span class="p p-Indicator">:</span>      <span class="l l-Scalar l-Scalar-Plain">-500,18:29:43</span>
-    <span class="l l-Scalar l-Scalar-Plain">#Exit `preTrial`</span><span class="p p-Indicator">:</span>       <span class="l l-Scalar l-Scalar-Plain">0,18:29:43</span>
-    <span class="l l-Scalar l-Scalar-Plain">#Enter `ActiveDelay`</span><span class="p p-Indicator">:</span>   <span class="l l-Scalar l-Scalar-Plain">1000,18:29:43</span>
-    <span class="l l-Scalar l-Scalar-Plain">#Exit `ActiveDelay`</span><span class="p p-Indicator">:</span>    <span class="l l-Scalar l-Scalar-Plain">1000,18:29:44</span>
-    <span class="l l-Scalar l-Scalar-Plain">#Enter `ActiveDelay`</span><span class="p p-Indicator">:</span>   <span class="l l-Scalar l-Scalar-Plain">1000,18:29:44</span>
-    <span class="l l-Scalar l-Scalar-Plain">#Exit `ActiveDelay`</span><span class="p p-Indicator">:</span>    <span class="l l-Scalar l-Scalar-Plain">1000,18:29:45</span>
-    <span class="l l-Scalar l-Scalar-Plain">#Enter `TrialStimulus`</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">2000,18:29:45</span>
-    <span class="l l-Scalar l-Scalar-Plain">#       t_stimDUR</span><span class="p p-Indicator">:</span>      <span class="l l-Scalar l-Scalar-Plain">25,18:29:46</span>
-    <span class="l l-Scalar l-Scalar-Plain">#Exit `TrialStimulus`</span><span class="p p-Indicator">:</span>  <span class="l l-Scalar l-Scalar-Plain">0,18:29:46</span>
-    <span class="l l-Scalar l-Scalar-Plain">#Enter `ActiveDelay`</span><span class="p p-Indicator">:</span>   <span class="l l-Scalar l-Scalar-Plain">50,18:29:46</span>
-    <span class="l l-Scalar l-Scalar-Plain">#Exit `ActiveDelay`</span><span class="p p-Indicator">:</span>    <span class="l l-Scalar l-Scalar-Plain">50,18:29:46</span>
-    <span class="l l-Scalar l-Scalar-Plain">#Enter `ActiveDelay`</span><span class="p p-Indicator">:</span>   <span class="l l-Scalar l-Scalar-Plain">800,18:29:46</span>
-    <span class="l l-Scalar l-Scalar-Plain">#Exit `ActiveDelay`</span><span class="p p-Indicator">:</span>    <span class="l l-Scalar l-Scalar-Plain">800,18:29:46</span>
-    <span class="l l-Scalar l-Scalar-Plain">Water:0,18:29:46</span>
-    <span class="l l-Scalar l-Scalar-Plain">#Enter `ActiveDelay`</span><span class="p p-Indicator">:</span>   <span class="l l-Scalar l-Scalar-Plain">2124,18:29:46</span>
-    <span class="l l-Scalar l-Scalar-Plain">#Exit `ActiveDelay`</span><span class="p p-Indicator">:</span>    <span class="l l-Scalar l-Scalar-Plain">2124,18:29:48</span>
-    <span class="l l-Scalar l-Scalar-Plain">response:-,18:29:48</span>
-    <span class="l l-Scalar l-Scalar-Plain">pre_count:0,18:29:48</span>
-    <span class="l l-Scalar l-Scalar-Plain">post_count:0,18:29:49</span>
-    <span class="l l-Scalar l-Scalar-Plain">rew_count:0,18:29:49</span>
-
-    <span class="l l-Scalar l-Scalar-Plain">.</span>
-    <span class="l l-Scalar l-Scalar-Plain">.</span>
-    <span class="l l-Scalar l-Scalar-Plain">.</span>
-
-    <span class="l l-Scalar l-Scalar-Plain">- Status</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">Ready,19:16:41</span>
-    <span class="l l-Scalar l-Scalar-Plain">##t_stimDUR:0,19:16:44</span>
-    <span class="l l-Scalar l-Scalar-Plain">t_stimDUR:0,19:16:44</span>
-    <span class="l l-Scalar l-Scalar-Plain">##trialType:N,19:16:44</span>
-    <span class="l l-Scalar l-Scalar-Plain">trialType:N,19:16:44</span>
-    <span class="l l-Scalar l-Scalar-Plain">##t_stimDUR:0,19:16:44</span>
-    <span class="l l-Scalar l-Scalar-Plain">t_stimDUR:0,19:16:44</span>
-    <span class="l l-Scalar l-Scalar-Plain">##trialType:N,19:16:44</span>
-    <span class="l l-Scalar l-Scalar-Plain">trialType:N,19:16:44</span>
-    <span class="l l-Scalar l-Scalar-Plain">#Enter `preTrial`</span><span class="p p-Indicator">:</span>      <span class="l l-Scalar l-Scalar-Plain">-500,19:16:44</span>
-    <span class="l l-Scalar l-Scalar-Plain">#Exit `preTrial`</span><span class="p p-Indicator">:</span>       <span class="l l-Scalar l-Scalar-Plain">0,19:16:45</span>
-    <span class="l l-Scalar l-Scalar-Plain">#Enter `ActiveDelay`</span><span class="p p-Indicator">:</span>   <span class="l l-Scalar l-Scalar-Plain">1000,19:16:45</span>
-    <span class="l l-Scalar l-Scalar-Plain">#Exit `ActiveDelay`</span><span class="p p-Indicator">:</span>    <span class="l l-Scalar l-Scalar-Plain">1000,19:16:46</span>
-    <span class="l l-Scalar l-Scalar-Plain">#Enter `ActiveDelay`</span><span class="p p-Indicator">:</span>   <span class="l l-Scalar l-Scalar-Plain">1000,19:16:46</span>
-    <span class="l l-Scalar l-Scalar-Plain">#Exit `ActiveDelay`</span><span class="p p-Indicator">:</span>    <span class="l l-Scalar l-Scalar-Plain">1000,19:16:47</span>
-    <span class="l l-Scalar l-Scalar-Plain">#Enter `TrialStimulus`</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">2000,19:16:47</span>
-    <span class="l l-Scalar l-Scalar-Plain">#       t_stimDUR</span><span class="p p-Indicator">:</span>      <span class="l l-Scalar l-Scalar-Plain">0,19:16:47</span>
-    <span class="l l-Scalar l-Scalar-Plain">#Exit `TrialStimulus`</span><span class="p p-Indicator">:</span>  <span class="l l-Scalar l-Scalar-Plain">0,19:16:47</span>
-    <span class="l l-Scalar l-Scalar-Plain">#Enter `ActiveDelay`</span><span class="p p-Indicator">:</span>   <span class="l l-Scalar l-Scalar-Plain">50,19:16:47</span>
-    <span class="l l-Scalar l-Scalar-Plain">#Exit `ActiveDelay`</span><span class="p p-Indicator">:</span>    <span class="l l-Scalar l-Scalar-Plain">50,19:16:47</span>
-    <span class="l l-Scalar l-Scalar-Plain">#Enter `ActiveDelay`</span><span class="p p-Indicator">:</span>   <span class="l l-Scalar l-Scalar-Plain">800,19:16:47</span>
-    <span class="l l-Scalar l-Scalar-Plain">#Exit `ActiveDelay`</span><span class="p p-Indicator">:</span>    <span class="l l-Scalar l-Scalar-Plain">800,19:16:48</span>
-    <span class="l l-Scalar l-Scalar-Plain">Water:0,19:16:48</span>
-    <span class="l l-Scalar l-Scalar-Plain">#Enter `ActiveDelay`</span><span class="p p-Indicator">:</span>   <span class="l l-Scalar l-Scalar-Plain">2148,19:16:48</span>
-    <span class="l l-Scalar l-Scalar-Plain">#Exit `ActiveDelay`</span><span class="p p-Indicator">:</span>    <span class="l l-Scalar l-Scalar-Plain">2148,19:16:50</span>
-    <span class="l l-Scalar l-Scalar-Plain">response:R,19:16:50</span>
-    <span class="l l-Scalar l-Scalar-Plain">pre_count:0,19:16:50</span>
-    <span class="l l-Scalar l-Scalar-Plain">post_count:0,19:16:50</span>
-    <span class="l l-Scalar l-Scalar-Plain">rew_count:0,19:16:50</span>
-    <span class="l l-Scalar l-Scalar-Plain">t_stimDUR:0,19:16:50</span>
-<span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">Status</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">Ready,19:16:50</span>
-    <span class="l l-Scalar l-Scalar-Plain">##t_stimDUR:150,19:16:52</span>
-    <span class="l l-Scalar l-Scalar-Plain">t_stimDUR:150,19:16:52</span>
-    <span class="l l-Scalar l-Scalar-Plain">##trialType:G,19:16:52</span>
-    <span class="l l-Scalar l-Scalar-Plain">trialType:G,19:16:53</span>
-    <span class="l l-Scalar l-Scalar-Plain">##t_stimDUR:150,19:16:53</span>
-    <span class="l l-Scalar l-Scalar-Plain">t_stimDUR:150,19:16:53</span>
-    <span class="l l-Scalar l-Scalar-Plain">##trialType:G,19:16:53</span>
-    <span class="l l-Scalar l-Scalar-Plain">trialType:G,19:16:53</span>
-    <span class="l l-Scalar l-Scalar-Plain">#Enter `preTrial`</span><span class="p p-Indicator">:</span>      <span class="l l-Scalar l-Scalar-Plain">-500,19:16:53</span>
-    <span class="l l-Scalar l-Scalar-Plain">#Exit `preTrial`</span><span class="p p-Indicator">:</span>       <span class="l l-Scalar l-Scalar-Plain">0,19:16:53</span>
-    <span class="l l-Scalar l-Scalar-Plain">#Enter `ActiveDelay`</span><span class="p p-Indicator">:</span>   <span class="l l-Scalar l-Scalar-Plain">1000,19:16:53</span>
-    <span class="l l-Scalar l-Scalar-Plain">#Exit `ActiveDelay`</span><span class="p p-Indicator">:</span>    <span class="l l-Scalar l-Scalar-Plain">1000,19:16:54</span>
-    <span class="l l-Scalar l-Scalar-Plain">#Enter `ActiveDelay`</span><span class="p p-Indicator">:</span>   <span class="l l-Scalar l-Scalar-Plain">1000,19:16:54</span>
-    <span class="l l-Scalar l-Scalar-Plain">#Exit `ActiveDelay`</span><span class="p p-Indicator">:</span>    <span class="l l-Scalar l-Scalar-Plain">1000,19:16:55</span>
-    <span class="l l-Scalar l-Scalar-Plain">#Enter `TrialStimulus`</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">2000,19:16:55</span>
-    <span class="l l-Scalar l-Scalar-Plain">#       t_stimDUR</span><span class="p p-Indicator">:</span>      <span class="l l-Scalar l-Scalar-Plain">150,19:16:55</span>
-    <span class="l l-Scalar l-Scalar-Plain">#Exit `TrialStimulus`</span><span class="p p-Indicator">:</span>  <span class="l l-Scalar l-Scalar-Plain">0,19:16:55</span>
-    <span class="l l-Scalar l-Scalar-Plain">#Enter `ActiveDelay`</span><span class="p p-Indicator">:</span>   <span class="l l-Scalar l-Scalar-Plain">50,19:16:55</span>
-    <span class="l l-Scalar l-Scalar-Plain">#Exit `ActiveDelay`</span><span class="p p-Indicator">:</span>    <span class="l l-Scalar l-Scalar-Plain">50,19:16:55</span>
-    <span class="l l-Scalar l-Scalar-Plain">#Enter `ActiveDelay`</span><span class="p p-Indicator">:</span>   <span class="l l-Scalar l-Scalar-Plain">800,19:16:55</span>
-    <span class="l l-Scalar l-Scalar-Plain">#Exit `ActiveDelay`</span><span class="p p-Indicator">:</span>    <span class="l l-Scalar l-Scalar-Plain">800,19:16:56</span>
-    <span class="l l-Scalar l-Scalar-Plain">Water:0,19:16:56</span>
-    <span class="l l-Scalar l-Scalar-Plain">#Enter `ActiveDelay`</span><span class="p p-Indicator">:</span>   <span class="l l-Scalar l-Scalar-Plain">1998,19:16:56</span>
-    <span class="l l-Scalar l-Scalar-Plain">#Exit `ActiveDelay`</span><span class="p p-Indicator">:</span>    <span class="l l-Scalar l-Scalar-Plain">1998,19:16:58</span>
-    <span class="l l-Scalar l-Scalar-Plain">response:-,19:16:58</span>
-    <span class="l l-Scalar l-Scalar-Plain">pre_count:0,19:16:58</span>
-    <span class="l l-Scalar l-Scalar-Plain">post_count:0,19:16:58</span>
-    <span class="l l-Scalar l-Scalar-Plain">rew_count:0,19:16:58</span>
-    <span class="l l-Scalar l-Scalar-Plain">t_stimDUR:150,19:16:58</span>
-<span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">Status</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">Ready,19:16:58</span>
-    <span class="l l-Scalar l-Scalar-Plain">##t_stimDUR:25,19:17:01</span>
-    <span class="l l-Scalar l-Scalar-Plain">t_stimDUR:25,19:17:01</span>
-    <span class="l l-Scalar l-Scalar-Plain">##trialType:G,19:17:01</span>
-    <span class="l l-Scalar l-Scalar-Plain">trialType:G,19:17:01</span>
-    <span class="l l-Scalar l-Scalar-Plain">##t_stimDUR:25,19:17:01</span>
-    <span class="l l-Scalar l-Scalar-Plain">t_stimDUR:25,19:17:01</span>
-    <span class="l l-Scalar l-Scalar-Plain">##trialType:G,19:17:02</span>
-    <span class="l l-Scalar l-Scalar-Plain">trialType:G,19:17:02</span>
-    <span class="l l-Scalar l-Scalar-Plain">#Enter `preTrial`</span><span class="p p-Indicator">:</span>      <span class="l l-Scalar l-Scalar-Plain">-500,19:17:02</span>
-    <span class="l l-Scalar l-Scalar-Plain">#Exit `preTrial`</span><span class="p p-Indicator">:</span>       <span class="l l-Scalar l-Scalar-Plain">0,19:17:02</span>
-    <span class="l l-Scalar l-Scalar-Plain">#Enter `ActiveDelay`</span><span class="p p-Indicator">:</span>   <span class="l l-Scalar l-Scalar-Plain">1000,19:17:02</span>
-    <span class="l l-Scalar l-Scalar-Plain">t_stimDUR:25,18:29:49</span>
-</pre></div>
-</div>
-</div>
 </div>
 
 
