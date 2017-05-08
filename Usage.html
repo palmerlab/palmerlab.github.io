@@ -222,19 +222,66 @@ and recompile. With animal experimentation in mind it was decided that it
 would be best to avoid editing the control code during a run. The Arduino
 exposes a number of relevant variables to the Serial Communications port,
 which the Python wrapper reads and writes to.</p>
-<p>The interactive options currently provided allow the following variables to be
-altered online:</p>
-<ul class="simple">
-<li>lick threshold</li>
-<li>show threshold</li>
-<li>lick count</li>
-<li>show lick count</li>
-<li>toggle mode</li>
-<li>adjust no lick Period</li>
-<li>show no Lick Period</li>
-<li>adjust trial duration</li>
-<li>toggle time out</li>
-</ul>
+<p>Pressing any key (except for <code class="docutils literal"><span class="pre">SPACE</span></code> or <code class="docutils literal"><span class="pre">Enter</span></code>) while the SerialComms.py
+script is running will pause the program loop. Pressing <code class="docutils literal"><span class="pre">Enter</span></code> or <code class="docutils literal"><span class="pre">SPACE</span></code>
+will resume the program.</p>
+<p>In addition a subset of relevant variables can be modified using key presses
+outlined in the following table.</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="14%" />
+<col width="86%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">key</th>
+<th class="head">option</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td><code class="docutils literal"><span class="pre">H</span></code></td>
+<td>This menu</td>
+</tr>
+<tr class="row-odd"><td><code class="docutils literal"><span class="pre">P</span></code></td>
+<td>Punish</td>
+</tr>
+<tr class="row-even"><td><code class="docutils literal"><span class="pre">&lt;</span></code> /
+<code class="docutils literal"><span class="pre">&gt;</span></code></td>
+<td>increase / decrease the lick threshold</td>
+</tr>
+<tr class="row-odd"><td><code class="docutils literal"><span class="pre">?</span></code></td>
+<td>show threshold</td>
+</tr>
+<tr class="row-even"><td><code class="docutils literal"><span class="pre">[</span></code> /
+<code class="docutils literal"><span class="pre">]</span></code></td>
+<td>increase / decrease the minimum number of licks
+required to get a reward</td>
+</tr>
+<tr class="row-odd"><td><code class="docutils literal"><span class="pre">\</span></code></td>
+<td>show lickcount</td>
+</tr>
+<tr class="row-even"><td><code class="docutils literal"><span class="pre">tab</span></code></td>
+<td>toggle mode</td>
+</tr>
+<tr class="row-odd"><td><code class="docutils literal"><span class="pre">:</span></code> /
+<code class="docutils literal"><span class="pre">&quot;</span></code></td>
+<td>increase / decrease the time prior to a stimulus
+in which a lick will end the trial</td>
+</tr>
+<tr class="row-even"><td><code class="docutils literal"><span class="pre">L</span></code></td>
+<td>show noLick period</td>
+</tr>
+<tr class="row-odd"><td><code class="docutils literal"><span class="pre">(</span></code> /
+<code class="docutils literal"><span class="pre">)</span></code></td>
+<td>increase / decrease the duration of a trial</td>
+</tr>
+<tr class="row-even"><td><code class="docutils literal"><span class="pre">T</span></code></td>
+<td>show trial duration period</td>
+</tr>
+<tr class="row-odd"><td><code class="docutils literal"><span class="pre">Y</span></code></td>
+<td>toggle timeout (requires punish to take effect)</td>
+</tr>
+</tbody>
+</table>
 </div>
 <div class="section" id="adjusting-default-arguments">
 <span id="adjust-defaults"></span><h2>Adjusting Default Arguments<a class="headerlink" href="#adjusting-default-arguments" title="Permalink to this headline">¶</a></h2>
