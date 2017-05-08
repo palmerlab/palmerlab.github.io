@@ -1,0 +1,268 @@
+##############
+Output Format
+##############
+
+The following table shows the output generated from running SerialComms.py
+with these parameters::
+
+    >> SerialComms.py -i G3 -af -lt 1 -lc 2 -noise -nlp 1000 
+    ..  -rdur 800 -rdel 50 --trials 0 25 50 100 150 200 -td 5 
+    ..  -to 2 --ITI 2 8 
+
+.. csv-table:: 
+    :header-rows: 1
+    :widths: auto
+    
+    ,ID,Water,audio,block,comment,lickThres,lickTrigReward,minlickCount,mode,post_count,pre_count,punish_tone,response,rew_count,reward_nogo,t_noLickPer,t_rewardDEL,t_rewardDUR,t_stimDUR,t_stimONSET,t_trialDUR,time,timeout,trialType,trial_noise,trial_num
+    0,G3,0,1,0,,204,0,2,o,0,0,0,-,0,0,1000,50,800,25,2000,5000,18:29:43,2,G,TRUE,0
+    1,G3,0,1,0,,204,0,2,o,0,0,0,R,0,0,1000,50,800,0,2000,5000,18:30:08,2,N,TRUE,1
+    2,G3,1,1,0,,204,0,2,o,6,2,0,H,11,0,1000,50,800,50,2000,5000,18:30:19,2,G,TRUE,2
+    3,G3,0,1,0,,204,0,2,o,,,0,e,,0,1000,50,800,,2000,5000,18:30:28,2,G,TRUE,3
+    4,G3,1,1,0,,204,0,2,o,11,0,0,H,10,0,1000,50,800,200,2000,5000,18:30:38,2,G,TRUE,4
+    5,G3,0,1,0,,204,0,2,o,,,0,e,,0,1000,50,800,,2000,5000,18:30:48,2,G,TRUE,5
+    
+The .csv file that gets generated contains a table of variables, that may be
+relevant to analysis.
+
+.. csv-table:: 
+   
+    Variable       , value         ,,Variable       , value
+    ID,The identity string for this animal ,,rew_count      ,
+    Water,Either 0 for no water delivered\, or 1 to indicate water was given,, reward_nogo    ,
+    audio          ,              ,,t_noLickPer    ,
+    block          ,              ,,t_rewardDEL    ,
+    comment        ,              ,,t_rewardDUR    ,
+    lickThres      ,              ,,t_stimDUR      ,
+    lickTrigReward ,              ,,t_stimONSET    ,
+    minlickCount   ,              ,,t_trialDUR     ,
+    mode           ,              ,,time           ,
+    post_count     ,              ,,timeout        ,
+    pre_count      ,              ,,trialType      ,
+    punish_tone    ,              ,,trial_noise    ,
+    response       ,              ,,trial_num      ,
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+
+
+In this example the parameters specified yield the following trial conditions:
+
+* ``-i G3`` (or ``--ID G3``): 
+    specifies an identifier for this animal, 
+    this identifier is then used in the filename of the generated output.
+    ie: G3_YYMMDD.csv
+
+* ``-af`` (or ``--audio``): 
+    specify that audio cues are to be used in this trial.
+    Lick events produce a brief click when detected and the reward period, 
+    reward event, and punishment are all signalled by different tones.
+
+*  ``-lt 1``:
+    Sets the threshold of the lick detection to be 1 V. Rising edges exceeding
+    the lick threshold value will be counted as lick events.
+
+* ``-lc 2``:
+    Specifies the number of licks that are required in order for the Arduino to
+    count a response. At least this number of licks are required in the response
+    period in order to trigger a reward or a punishment. In addition, this
+    is the number of licks necessary to break a trial before the stimulus is 
+    delivered.
+
+* ``-noise``:
+    Specifies that a masking noise should be played from the PC speakers. This
+    noise plays during the trial in order to simulate the sounds of the laser 
+    scanning mirrors on non-imaging trials.
+
+* ``-nlp 1000``:
+    Specifies the no lick period in milliseconds. This is the number of 
+    milliseconds before the stimulus in which licks will cause the trial to be
+    cut short.
+    
+*  ``-rdur 800``:
+    Specifies the time in milliseconds to listen for licks after the stimulus.
+    That is, the width of the response period in milliseconds.
+
+*  ``-rdel 50``:
+    Specifies the time to wait after the end of the stimulus before the response
+    period becomes active. Also in milliseconds.
+
+* ``--trials 0 25 50 100 150 200``:
+    Specifies 6 durations for the stimulus. The program will shuffle through
+    this list for a set number of repeats 
+    (by default 500, see :ref:`adjust-defaults`)
+
+* ``-td 5`` :
+    Specifies that the trial has a duration of 5 seconds. The recording trigger
+    will remain in the ``HIGH`` voltage state for this duration, unless a trial
+    is interrupted by early licking.
+
+* ``-to 2``:
+    Specifies a timeout of 2 seconds. In the event that the animal responds to
+    the no-go trial this is the amount of time they must withhold additional 
+    licks for the next inter-trial interval to begin. Additional licks within 
+    this period will reset the time out.
+
+* ``--ITI 2 8``:
+    Specifies an inter-trial interval of between 2 and 8 seconds. The exact time
+    to wait between any particular two trials is random, between theses two
+    bounds.
+
+.. code-block:: yaml
+    :caption: output.log
+    
+        #Arduino online,18:29:40
+        #BB_V3.0.20170201.8,18:29:40
+    - Status: Ready,18:29:40
+        ##t_stimONSET:2000,18:29:40
+        t_stimONSET:2000,18:29:40
+        ##minlickCount:2,18:29:40
+        minlickCount:2,18:29:40
+        ##mode:o,18:29:40
+        mode:o,18:29:40
+        ##lickThres:204,18:29:41
+        lickThres:204,18:29:41
+        ##break_wrongChoice:1,18:29:41
+        break_wrongChoice:1,18:29:41
+        ##reward_nogo:0,18:29:41
+        reward_nogo:0,18:29:41
+        ##lickTrigReward:0,18:29:41
+        lickTrigReward:0,18:29:41
+        ##minlickCount:2,18:29:41
+        minlickCount:2,18:29:41
+        ##t_noLickPer:1000,18:29:41
+        t_noLickPer:1000,18:29:41
+        ##lickThres:204,18:29:41
+        lickThres:204,18:29:41
+        ##t_stimONSET:2000,18:29:41
+        t_stimONSET:2000,18:29:41
+        ##t_rewardDEL:50,18:29:42
+        t_rewardDEL:50,18:29:42
+        ##t_rewardDUR:800,18:29:42
+        t_rewardDUR:800,18:29:42
+        ##punish_tone:0,18:29:42
+        punish_tone:0,18:29:42
+        ##t_trialDUR:5000.0,18:29:42
+        t_trialDUR:5000,18:29:42
+        ##mode:o,18:29:42
+        mode:o,18:29:42
+        ##timeout:2.5,18:29:42
+        timeout:2,18:29:42
+        ##audio:1,18:29:42
+        audio:1,18:29:42
+        ##t_stimDUR:25,18:29:43
+        t_stimDUR:25,18:29:43
+        ##trialType:G,18:29:43
+        trialType:G,18:29:43
+        ##t_stimDUR:25,18:29:43
+        t_stimDUR:25,18:29:43
+        ##trialType:G,18:29:43
+        trialType:G,18:29:43
+        #Enter `preTrial`:	-500,18:29:43
+        #Exit `preTrial`:	0,18:29:43
+        #Enter `ActiveDelay`:	1000,18:29:43
+        #Exit `ActiveDelay`:	1000,18:29:44
+        #Enter `ActiveDelay`:	1000,18:29:44
+        #Exit `ActiveDelay`:	1000,18:29:45
+        #Enter `TrialStimulus`:	2000,18:29:45
+        #	t_stimDUR:	25,18:29:46
+        #Exit `TrialStimulus`:	0,18:29:46
+        #Enter `ActiveDelay`:	50,18:29:46
+        #Exit `ActiveDelay`:	50,18:29:46
+        #Enter `ActiveDelay`:	800,18:29:46
+        #Exit `ActiveDelay`:	800,18:29:46
+        Water:0,18:29:46
+        #Enter `ActiveDelay`:	2124,18:29:46
+        #Exit `ActiveDelay`:	2124,18:29:48
+        response:-,18:29:48
+        pre_count:0,18:29:48
+        post_count:0,18:29:49
+        rew_count:0,18:29:49
+        
+        .
+        .
+        .
+        
+        - Status: Ready,19:16:41
+        ##t_stimDUR:0,19:16:44
+        t_stimDUR:0,19:16:44
+        ##trialType:N,19:16:44
+        trialType:N,19:16:44
+        ##t_stimDUR:0,19:16:44
+        t_stimDUR:0,19:16:44
+        ##trialType:N,19:16:44
+        trialType:N,19:16:44
+        #Enter `preTrial`:	-500,19:16:44
+        #Exit `preTrial`:	0,19:16:45
+        #Enter `ActiveDelay`:	1000,19:16:45
+        #Exit `ActiveDelay`:	1000,19:16:46
+        #Enter `ActiveDelay`:	1000,19:16:46
+        #Exit `ActiveDelay`:	1000,19:16:47
+        #Enter `TrialStimulus`:	2000,19:16:47
+        #	t_stimDUR:	0,19:16:47
+        #Exit `TrialStimulus`:	0,19:16:47
+        #Enter `ActiveDelay`:	50,19:16:47
+        #Exit `ActiveDelay`:	50,19:16:47
+        #Enter `ActiveDelay`:	800,19:16:47
+        #Exit `ActiveDelay`:	800,19:16:48
+        Water:0,19:16:48
+        #Enter `ActiveDelay`:	2148,19:16:48
+        #Exit `ActiveDelay`:	2148,19:16:50
+        response:R,19:16:50
+        pre_count:0,19:16:50
+        post_count:0,19:16:50
+        rew_count:0,19:16:50
+        t_stimDUR:0,19:16:50
+    - Status: Ready,19:16:50
+        ##t_stimDUR:150,19:16:52
+        t_stimDUR:150,19:16:52
+        ##trialType:G,19:16:52
+        trialType:G,19:16:53
+        ##t_stimDUR:150,19:16:53
+        t_stimDUR:150,19:16:53
+        ##trialType:G,19:16:53
+        trialType:G,19:16:53
+        #Enter `preTrial`:	-500,19:16:53
+        #Exit `preTrial`:	0,19:16:53
+        #Enter `ActiveDelay`:	1000,19:16:53
+        #Exit `ActiveDelay`:	1000,19:16:54
+        #Enter `ActiveDelay`:	1000,19:16:54
+        #Exit `ActiveDelay`:	1000,19:16:55
+        #Enter `TrialStimulus`:	2000,19:16:55
+        #	t_stimDUR:	150,19:16:55
+        #Exit `TrialStimulus`:	0,19:16:55
+        #Enter `ActiveDelay`:	50,19:16:55
+        #Exit `ActiveDelay`:	50,19:16:55
+        #Enter `ActiveDelay`:	800,19:16:55
+        #Exit `ActiveDelay`:	800,19:16:56
+        Water:0,19:16:56
+        #Enter `ActiveDelay`:	1998,19:16:56
+        #Exit `ActiveDelay`:	1998,19:16:58
+        response:-,19:16:58
+        pre_count:0,19:16:58
+        post_count:0,19:16:58
+        rew_count:0,19:16:58
+        t_stimDUR:150,19:16:58
+    - Status: Ready,19:16:58
+        ##t_stimDUR:25,19:17:01
+        t_stimDUR:25,19:17:01
+        ##trialType:G,19:17:01
+        trialType:G,19:17:01
+        ##t_stimDUR:25,19:17:01
+        t_stimDUR:25,19:17:01
+        ##trialType:G,19:17:02
+        trialType:G,19:17:02
+        #Enter `preTrial`:	-500,19:17:02
+        #Exit `preTrial`:	0,19:17:02
+        #Enter `ActiveDelay`:	1000,19:17:02
+        t_stimDUR:25,18:29:49
+
