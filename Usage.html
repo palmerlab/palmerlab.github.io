@@ -36,7 +36,7 @@
               href="genindex.html"/>
         <link rel="search" title="Search" href="search.html"/>
     <link rel="top" title="behaviour_box 0 documentation" href="index.html"/>
-        <link rel="next" title="Software Descriptions" href="details.html"/>
+        <link rel="next" title="Output Format" href="Output.html"/>
         <link rel="prev" title="Hardware" href="hardware.html"/> 
 
   
@@ -99,6 +99,7 @@
 <li class="toctree-l2"><a class="reference internal" href="#adjusting-default-arguments">Adjusting Default Arguments</a></li>
 </ul>
 </li>
+<li class="toctree-l1"><a class="reference internal" href="Output.html">Output Format</a></li>
 <li class="toctree-l1"><a class="reference internal" href="details.html">Software Descriptions</a></li>
 <li class="toctree-l1"><a class="reference internal" href="code.html">Code Reference</a></li>
 </ul>
@@ -215,7 +216,7 @@ status messages as they come in.</p>
 formats them into a Pandas DataFrame, which is then saved into
 <code class="docutils literal"><span class="pre">{ID}_{date}_000.csv</span></code></p>
 <div class="section" id="interactive-options">
-<h2>Interactive Options<a class="headerlink" href="#interactive-options" title="Permalink to this headline">¶</a></h2>
+<span id="interactivity"></span><h2>Interactive Options<a class="headerlink" href="#interactive-options" title="Permalink to this headline">¶</a></h2>
 <p>The Python wrapper was written to allow for limited interaction with the
 Arduino while a trial was being run without the need to touch the source code
 and recompile. With animal experimentation in mind it was decided that it
@@ -326,9 +327,9 @@ are defined in the <code class="docutils literal"><span class="pre">kwargs</span
 the <code class="docutils literal"><span class="pre">'default'</span></code> key of any of these parameters will set the value that the
 program loads with if no value for that parameter has been supplied at the
 command line.</p>
-<p>For instance, on my system, my Arduino is always located on the port <code class="docutils literal"><span class="pre">&quot;COM5&quot;</span></code>,
-therefore my file looks something like this:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">argparse</span>
+<p>For example, here the Arduino is always located on the port <code class="docutils literal"><span class="pre">&quot;COM5&quot;</span></code>,
+therefore the args.py file is modified as follows:</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">argparse</span>
 
 <span class="c1"># create the argument parsing object</span>
 <span class="n">p</span> <span class="o">=</span> <span class="n">argparse</span><span class="o">.</span><span class="n">ArgumentParser</span><span class="p">(</span><span class="n">description</span><span class="o">=</span><span class="s2">&quot;This program&quot;</span>
@@ -347,13 +348,13 @@ therefore my file looks something like this:</p>
             <span class="o">.</span>
             <span class="o">.</span>
 
-    <span class="p">(</span><span class="s2">&quot;--port&quot;</span><span class="p">,</span> <span class="p">)</span> <span class="p">:</span> <span class="p">{</span>
-                    <span class="s1">&#39;default&#39;</span> <span class="p">:</span> <span class="s2">&quot;COM5&quot;</span><span class="p">,</span>
-                    <span class="s1">&#39;type&#39;</span> <span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
-                    <span class="s1">&#39;help&#39;</span> <span class="p">:</span> <span class="s2">&quot;port that the Arduino is connected to&quot;</span><span class="p">,</span>
-                    <span class="p">},</span>
-<span class="p">}</span>
-
+<span class="hll">    <span class="p">(</span><span class="s2">&quot;--port&quot;</span><span class="p">,</span> <span class="p">)</span> <span class="p">:</span> <span class="p">{</span>
+</span><span class="hll">                    <span class="s1">&#39;default&#39;</span> <span class="p">:</span> <span class="s2">&quot;COM5&quot;</span><span class="p">,</span>
+</span><span class="hll">                    <span class="s1">&#39;type&#39;</span> <span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
+</span><span class="hll">                    <span class="s1">&#39;help&#39;</span> <span class="p">:</span> <span class="s2">&quot;port that the Arduino is connected to&quot;</span><span class="p">,</span>
+</span><span class="hll">                    <span class="p">},</span>
+</span><span class="hll"><span class="p">}</span>
+</span>
 <span class="c1"># load the argument parser with the parameters specified</span>
 <span class="k">for</span> <span class="n">k</span><span class="p">,</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">kwargs</span><span class="o">.</span><span class="n">iteritems</span><span class="p">():</span>
     <span class="n">p</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span><span class="o">*</span><span class="n">k</span><span class="p">,</span> <span class="o">**</span><span class="n">v</span><span class="p">)</span>
@@ -375,7 +376,7 @@ therefore my file looks something like this:</p>
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="details.html" class="btn btn-neutral float-right" title="Software Descriptions" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="Output.html" class="btn btn-neutral float-right" title="Output Format" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
         <a href="hardware.html" class="btn btn-neutral" title="Hardware" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>

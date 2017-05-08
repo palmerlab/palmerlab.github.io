@@ -37,7 +37,7 @@
         <link rel="search" title="Search" href="search.html"/>
     <link rel="top" title="behaviour_box 0 documentation" href="index.html"/>
         <link rel="next" title="Code Reference" href="code.html"/>
-        <link rel="prev" title="Usage" href="Usage.html"/> 
+        <link rel="prev" title="Output Format" href="Output.html"/> 
 
   
   <script src="_static/js/modernizr.min.js"></script>
@@ -95,6 +95,7 @@
 <li class="toctree-l1"><a class="reference internal" href="Installation.html">Install</a></li>
 <li class="toctree-l1"><a class="reference internal" href="hardware.html">Hardware</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Usage.html">Usage</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Output.html">Output Format</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Software Descriptions</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#behaviourbox-ino">behaviourbox.ino</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#files">Files</a></li>
@@ -243,10 +244,10 @@ statements. The basic logic is:</p>
 </div>
 <div class="section" id="global-variables-h">
 <h3>global_variables.h<a class="headerlink" href="#global-variables-h" title="Permalink to this headline">¶</a></h3>
-<p>contains definitions of all variables that are used by multiple
+<p>Contains definitions of all variables that are used by multiple
 functions and expected to have persistent values between the functions.
 These include the initialisation time, the various timing parameters, as
-well as any additional options that I have decided to make available.</p>
+well as any additional options that are available.</p>
 <table border="1" class="docutils">
 <colgroup>
 <col width="43%" />
@@ -424,16 +425,15 @@ response period</td>
 </div>
 <div class="section" id="serialcontroller-py">
 <h2>SerialController.py<a class="headerlink" href="#serialcontroller-py" title="Permalink to this headline">¶</a></h2>
-<p>This python script is a wrapper for communicating with the Arduino
-program. At it&#8217;s heart is a simple loop that reads data transmitted
-through a serial connection. This is not a necessary component, however
-I wrote it to make running trials a lot easier.</p>
+<p>This python script is a wrapper for communicating with the Arduino program.
+It is a simple loop that reads data transmitted through a serial connection.
+Note, this is not a necessary component, however it makes running trials a
+lot easier.</p>
 <ol class="arabic simple">
 <li>The program starts</li>
 <li>The program opens communications with available serial port The
 program waits until it gets the arduino is active, and prints all
-output until the ready signal is transmitted. Which is
-<code class="docutils literal"><span class="pre">-</span> <span class="pre">Status:</span> <span class="pre">Ready</span></code></li>
+output until the ready signal is transmitted.</li>
 <li>The program starts a block</li>
 <li>The program transmits the dict <code class="docutils literal"><span class="pre">params</span></code>, which holds all parameters
 for a single trial. The condition values get updated; based on the
@@ -441,8 +441,8 @@ frequencies being sent, all contents of <code class="docutils literal"><span cla
 the behaviour controller.</li>
 <li>The program prints the frequencies and the condition to the screen
 and a random timeout is started.</li>
-<li>The program initiates a trial by sending a literal <code class="docutils literal"><span class="pre">&quot;GO&quot;</span></code> to the
-behaviour box.<ul>
+<li>The program initiates a trial by sending a literal <code class="docutils literal"><span class="pre">&quot;START&quot;</span></code> message to
+the behaviour box.<ul>
 <li>The behaviour box runs one trial, with the parameters set
 previously</li>
 </ul>
@@ -651,7 +651,7 @@ config table</p>
         <a href="code.html" class="btn btn-neutral float-right" title="Code Reference" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="Usage.html" class="btn btn-neutral" title="Usage" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="Output.html" class="btn btn-neutral" title="Output Format" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   

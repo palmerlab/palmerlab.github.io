@@ -56,7 +56,7 @@ At the end of the trial the program collects all the status messages and
 formats them into a Pandas DataFrame, which is then saved into
 ``{ID}_{date}_000.csv``
 
-
+.. _interactivity:
 
 Interactive Options
 -------------------
@@ -160,8 +160,11 @@ the ``'default'`` key of any of these parameters will set the value that the
 program loads with if no value for that parameter has been supplied at the
 command line.
 
-For instance, on my system, my Arduino is always located on the port ``"COM5"``,
-therefore my file looks something like this::
+For example, here the Arduino is always located on the port ``"COM5"``,
+therefore the args.py file is modified as follows:
+
+.. code-block:: python
+    :emphasize-lines: 20-25
 
     import argparse
     
