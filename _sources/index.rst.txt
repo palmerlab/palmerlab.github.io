@@ -15,7 +15,7 @@ source repository: `<https://github.com/palmerlab/behaviour_box>`_.
 The repository contains a set of files to implement a Go -- No-Go task
 using an Arduino and Python 2.7. 
 
-This software is made up of two complimentary components. 
+This software is made up of two complementary components. 
 
 The two components to this implementation are the Arduino code, found in
 ``./behaviourbox/behaviourbox.ino`` and a Python wrapper for
