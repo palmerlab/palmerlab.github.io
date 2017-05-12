@@ -96,10 +96,12 @@
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Hardware</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#parts-list">Parts List</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#wiring-of-the-amplifier">Wiring of the Amplifier</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#wiring-solenoids">Wiring Solenoids</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#wiring-the-arduino">Wiring the Arduino</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="Usage.html">Usage</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Output.html">Output Format</a></li>
 <li class="toctree-l1"><a class="reference internal" href="details.html">Software Descriptions</a></li>
 <li class="toctree-l1"><a class="reference internal" href="code.html">Code Reference</a></li>
 </ul>
@@ -221,24 +223,27 @@
 <td>blunted 24 G needle</td>
 </tr>
 <tr class="row-odd"><td>&#160;</td>
-<td><strong>Water Delivery</strong></td>
+<td><strong>Water Delivery / Air Puffer</strong></td>
 </tr>
-<tr class="row-even"><td>1 ×</td>
+<tr class="row-even"><td>2 ×</td>
 <td><a class="reference external" href="http://www.takasago-fluidics.com/p/valve/s/pinch/PS/">24 V DC Solenoid pinch valve PS-1615NC</a></td>
 </tr>
-<tr class="row-odd"><td>1 ×</td>
-<td>TTL gated 24 V DC power supply</td>
+<tr class="row-odd"><td>2 ×</td>
+<td><a class="reference external" href="https://www.sparkfun.com/products/10213">MOSFET RFP30N06LE</a></td>
+</tr>
+<tr class="row-even"><td>2 ×</td>
+<td>1N4001 diode</td>
+</tr>
+<tr class="row-odd"><td>2 ×</td>
+<td>10 KΩ resistors</td>
 </tr>
 <tr class="row-even"><td>&#160;</td>
 <td><strong>Speaker</strong></td>
 </tr>
 <tr class="row-odd"><td>&#160;</td>
-<td><strong>Air Puffer</strong></td>
-</tr>
-<tr class="row-even"><td>&#160;</td>
 <td><strong>Stimulus</strong></td>
 </tr>
-<tr class="row-odd"><td>&#160;</td>
+<tr class="row-even"><td>&#160;</td>
 <td>BNC headers</td>
 </tr>
 </tbody>
@@ -246,7 +251,20 @@
 </div>
 <div class="section" id="wiring-of-the-amplifier">
 <h2>Wiring of the Amplifier<a class="headerlink" href="#wiring-of-the-amplifier" title="Permalink to this headline">¶</a></h2>
-<img alt="_images/Amplifier_circuit.svg" src="_images/Amplifier_circuit.svg" /></div>
+<div align="center" class="align-center"><img alt="_images/Amplifier_circuit.svg" src="_images/Amplifier_circuit.svg" /></div>
+</div>
+<div class="section" id="wiring-solenoids">
+<h2>Wiring Solenoids<a class="headerlink" href="#wiring-solenoids" title="Permalink to this headline">¶</a></h2>
+<p>The air puffer and water delivery system can both be constructed
+with the following circuit. This circuit is described in <a class="reference external" href="http://bildr.org/2012/03/rfp30n06le-arduino/">this blog post from
+bildr</a>.</p>
+<p>Both the air-puffer and water delivery system can be constructed from using
+solenoid pinch valves. The valves listed above require 24 V DC power supply,
+which exceeds that supplied by the Arduino logic pins. This circuit uses a
+mosfet to gate a 24 V solenoid. A 10 KΩ  resistor and diode (1N4001) are
+included to prevent voltage surges from shorting the Arduino.</p>
+<div align="center" class="align-center"><img alt="_images/Solenoid_wiring.svg" src="_images/Solenoid_wiring.svg" /></div>
+</div>
 <div class="section" id="wiring-the-arduino">
 <h2>Wiring the Arduino<a class="headerlink" href="#wiring-the-arduino" title="Permalink to this headline">¶</a></h2>
 <p>The following table outlines the wiring of the Arduino for the program
