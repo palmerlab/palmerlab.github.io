@@ -240,8 +240,14 @@
 <tr class="row-even"><td>&#160;</td>
 <td><strong>Speaker</strong></td>
 </tr>
-<tr class="row-odd"><td>&#160;</td>
+<tr class="row-odd"><td>1 ×</td>
+<td><a class="reference external" href="https://www.digikey.com/product-detail/en/pui-audio-inc/AS07008PO-2-R/668-1191-ND/1738484">speaker 8Ω 2W</a></td>
+</tr>
+<tr class="row-even"><td>&#160;</td>
 <td><strong>Stimulus</strong></td>
+</tr>
+<tr class="row-odd"><td>1 ×</td>
+<td><a class="reference external" href="https://www.precisionmicrodrives.com/product/308-100-8mm-vibration-motor-3mm-type">LRA 8mm (precision microdrives)</a></td>
 </tr>
 <tr class="row-even"><td>&#160;</td>
 <td>BNC headers</td>
@@ -258,11 +264,11 @@
 <p>The air puffer and water delivery system can both be constructed
 with the following circuit. This circuit is described in <a class="reference external" href="http://bildr.org/2012/03/rfp30n06le-arduino/">this blog post from
 bildr</a>.</p>
-<p>Both the air-puffer and water delivery system can be constructed from using
+<p>Both the air-puffer and water delivery system can be constructed using
 solenoid pinch valves. The valves listed above require 24 V DC power supply,
 which exceeds that supplied by the Arduino logic pins. This circuit uses a
-mosfet to gate a 24 V solenoid. A 10 KΩ  resistor and diode (1N4001) are
-included to prevent voltage surges from shorting the Arduino.</p>
+MOSFET (RFP30N06LE) to gate the solenoid. A 10 KΩ  resistor and diode
+(1N4001) are included to prevent voltage surges from shorting the Arduino.</p>
 <div align="center" class="align-center"><img alt="_images/Solenoid_wiring.svg" src="_images/Solenoid_wiring.svg" /></div>
 </div>
 <div class="section" id="wiring-the-arduino">
